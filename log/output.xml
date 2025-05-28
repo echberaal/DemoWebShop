@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-28T16:19:19.726478" rpa="false" schemaversion="5">
+<suite id="s1" name="Main" source="C:\Users\aechbera\PycharmProjects\dev\robot\Demo Web Shop\Tests\Main.robot">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:20.136870" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-28T16:19:20.136608" elapsed="3.538109"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-28T16:19:23.675105" elapsed="0.046763"/>
+</kw>
+<kw name="check if we are in home page" owner="Common">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${TOPIC_HEADER_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-28T16:19:23.722637" elapsed="0.013525"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:23.772210" level="INFO">${TOPIC_HEADER_VALUE} = Welcome to our store</msg>
+<var>${TOPIC_HEADER_VALUE}</var>
+<arg>${TOPIC_HEADER_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T16:19:23.737708" elapsed="0.034635"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${TOPIC_HEADER_VALUE}</arg>
+<arg>Welcome to our store</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-28T16:19:23.772519" elapsed="0.000226"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:23.722285" elapsed="0.050546"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:20.136064" elapsed="3.636832"/>
+</kw>
+<test id="s1-t1" name="User logs in adds from cart" line="24">
+<kw name="Given user logs in with valid data" owner="App">
+<kw name="Given user is on the login page" owner="App">
+<kw name="Given navbar should be visible" owner="Navbar">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:23.802222" level="INFO">Element 'class=header-links' is displayed.</msg>
+<arg>${NAVBAR_LOCATOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-28T16:19:23.773985" elapsed="0.028408"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:23.773798" elapsed="0.028695"/>
+</kw>
+<kw name="When user clicks login" owner="Navbar">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:23.803134" level="INFO">Clicking element 'class=ico-login'.</msg>
+<arg>${LOGIN_NAVBAR_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T16:19:23.802948" elapsed="0.365774"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:23.802692" elapsed="0.366291"/>
+</kw>
+<kw name="Then check if we are in the login page" owner="Login">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PAGE_TITLE_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-28T16:19:24.169771" elapsed="0.011326"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:24.193610" level="INFO">${PAGE_TITLE_VALUE} = Welcome, Please Sign In!</msg>
+<var>${PAGE_TITLE_VALUE}</var>
+<arg>${PAGE_TITLE_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T16:19:24.181314" elapsed="0.012440"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${PAGE_TITLE_VALUE}</arg>
+<arg>Sign In</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-28T16:19:24.193976" elapsed="0.000253"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:24.208310" level="INFO">Element 'id=Email' is displayed.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-28T16:19:24.194349" elapsed="0.014295"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:24.227451" level="INFO">Element 'id=Password' is displayed.</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-28T16:19:24.209139" elapsed="0.018651"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:24.169312" elapsed="0.058670"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:23.773620" elapsed="0.454471"/>
+</kw>
+<kw name="When user fills the login form" owner="Login">
+<kw name="Fill Log In Form" owner="Login">
+<kw name="Fill Email" owner="Login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:24.230657" level="INFO">Typing text 'john.doe103@e3xample.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T16:19:24.230280" elapsed="0.102429"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-05-28T16:19:24.229752" elapsed="0.103235"/>
+</kw>
+<kw name="Fill Password" owner="Login">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:24.334547" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-05-28T16:19:24.366011" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T16:19:24.334162" elapsed="0.088788"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-28T16:19:24.333502" elapsed="0.089671"/>
+</kw>
+<arg>${email}</arg>
+<arg>Password123</arg>
+<status status="PASS" start="2025-05-28T16:19:24.229069" elapsed="0.194202"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:24.228423" elapsed="0.194942"/>
+</kw>
+<kw name="And user submits the login form" owner="Login">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:24.424283" level="INFO">Clicking element 'xpath=/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input'.</msg>
+<arg>${LOGIN_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T16:19:24.423989" elapsed="0.059607"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:24.423611" elapsed="0.060141"/>
+</kw>
+<kw name="Then user account should be visible in navbar" owner="Navbar">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${ACCOUNT_NAVBAR_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-28T16:19:24.484243" elapsed="0.008590"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:25.017969" level="INFO">${ACCOUNT_NAVBAR_VALUE} = john.doe103@e3xample.com</msg>
+<var>${ACCOUNT_NAVBAR_VALUE}</var>
+<arg>${ACCOUNT_NAVBAR_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T16:19:24.493077" elapsed="0.525040"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${ACCOUNT_NAVBAR_VALUE}</arg>
+<arg>${email}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-28T16:19:25.018335" elapsed="0.000299"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:24.483948" elapsed="0.534773"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:23.773391" elapsed="1.245811"/>
+</kw>
+<kw name="And connected user adds item &quot;Books&quot; to cart" owner="App">
+<kw name="Given section bar should be visible" owner="Navbar">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:25.047536" level="INFO">Element 'class=header-menu' is displayed.</msg>
+<arg>${SECTION_BAR_LOCATOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-28T16:19:25.020644" elapsed="0.027073"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:25.020280" elapsed="0.027547"/>
+</kw>
+<kw name="When user selects &quot;Books&quot; section" owner="Product">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:25.048665" level="INFO">Clicking element 'css=ul.top-menu &gt; li:first-child'.</msg>
+<arg>${BOOK_SECTION_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T16:19:25.048439" elapsed="0.480470"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PAGE_TITLE_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-28T16:19:25.529155" elapsed="0.009656"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:25.554569" level="INFO">${PAGE_TITLE_VALUE} = Books</msg>
+<var>${PAGE_TITLE_VALUE}</var>
+<arg>${PAGE_TITLE_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T16:19:25.539027" elapsed="0.015659"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${PAGE_TITLE_VALUE}</arg>
+<arg>Books</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-28T16:19:25.554856" elapsed="0.000206"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:25.048069" elapsed="0.507078"/>
+</kw>
+<kw name="Then product list should be visible" owner="Product">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:25.569203" level="INFO">Element 'class=product-grid' is displayed.</msg>
+<arg>${PRODUCT_LIST_LOCATOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-28T16:19:25.555505" elapsed="0.013900"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:25.555292" elapsed="0.014218"/>
+</kw>
+<kw name="When user selects the first product from the list" owner="Product">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:25.570131" level="INFO">Clicking element 'css=div.product-grid &gt; div:nth-child(1) a'.</msg>
+<arg>${FIRST_PRODUCT_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T16:19:25.569945" elapsed="1.152492"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:25.569685" elapsed="1.152920"/>
+</kw>
+<kw name="And check if we are in a product page" owner="Product">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-28T16:19:26.739500" level="INFO">Element 'class=product-essential' is displayed.</msg>
+<arg>${PRODUCT_OVERVIEW_LOCATOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-28T16:19:26.723135" elapsed="0.016608"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:26.722808" elapsed="0.017097"/>
+</kw>
+<kw name="Then user adds the product to the cart" owner="Product">
+<kw name="Convert Parenthesized To Number" owner="Product">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-28T16:19:26.741326" level="FAIL">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</msg>
+<var>${number}</var>
+<arg>int('${value}'.strip('()'))</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="FAIL" start="2025-05-28T16:19:26.740994" elapsed="0.000553">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</status>
+</kw>
+<return>
+<value>${number}</value>
+<status status="NOT RUN" start="2025-05-28T16:19:26.741654" elapsed="0.000427"/>
+</return>
+<var>${oldQty}</var>
+<arg>${CART_QUANTITY_LOCATOR}</arg>
+<status status="FAIL" start="2025-05-28T16:19:26.740655" elapsed="0.001564">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-28T16:19:26.742357" elapsed="0.000062"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-28T16:19:26.742511" elapsed="0.000059"/>
+</kw>
+<kw name="Convert Parenthesized To Number" owner="Product">
+<var>${newQty}</var>
+<arg>${CART_QUANTITY_LOCATOR}</arg>
+<status status="NOT RUN" start="2025-05-28T16:19:26.742695" elapsed="0.000059"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${oldQty}</arg>
+<arg>${newQty}+1</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="NOT RUN" start="2025-05-28T16:19:26.742846" elapsed="0.000106"/>
+</kw>
+<status status="FAIL" start="2025-05-28T16:19:26.740196" elapsed="0.002852">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</status>
+</kw>
+<status status="FAIL" start="2025-05-28T16:19:25.019634" elapsed="1.723497">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</status>
+</kw>
+<tag>smoke</tag>
+<status status="FAIL" start="2025-05-28T16:19:23.772967" elapsed="2.970297">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</status>
+</test>
+<kw name="End Web Test" owner="Common" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-28T16:19:27.744836" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-28T16:19:26.744036" elapsed="1.001019"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-28T16:19:27.745232" elapsed="2.289270"/>
+</kw>
+<status status="PASS" start="2025-05-28T16:19:26.743839" elapsed="3.290958"/>
+</kw>
+<doc>Cest une description du test page en general</doc>
+<status status="FAIL" start="2025-05-28T16:19:19.749381" elapsed="10.285533"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Main" id="s1" pass="0" fail="1" skip="0">Main</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-28T16:19:20.133463" level="WARN">Error in file 'C:\Users\aechbera\PycharmProjects\dev\robot\Demo Web Shop\Resources\PageObjects\Product.robot' on line 34: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

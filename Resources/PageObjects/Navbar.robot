@@ -3,6 +3,7 @@ Library     SeleniumLibrary
 
 *** Variables ***
 ${NAVBAR_LOCATOR}                       class=header-links
+${SECTION_BAR_LOCATOR}                  class=header-menu
 ${REGISTER_NAVBAR_BUTTON_LOCATOR}       class=ico-register
 ${LOGIN_NAVBAR_BUTTON_LOCATOR}         class=ico-login
 ${LOGOUT_NAVBAR_BUTTON_LOCATOR}          class=ico-logout
@@ -11,6 +12,8 @@ ${ACCOUNT_NAVBAR_LOCATOR}                   class=account
 *** Keywords ***
 navbar should be visible
     Element Should Be Visible    ${NAVBAR_LOCATOR}
+section bar should be visible
+    Element Should Be Visible    ${SECTION_BAR_LOCATOR}
 user clicks register
     Click Element    ${REGISTER_NAVBAR_BUTTON_LOCATOR}
 user clicks login
