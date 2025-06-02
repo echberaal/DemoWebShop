@@ -51,3 +51,4 @@ cart should contain "Book"
     Given navbar should be visible
     When users clicks shopping cart
     And verify page title   Shopping cart
+    Then Verify Cart Row Count    not empty
