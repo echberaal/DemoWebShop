@@ -5,15 +5,14 @@ Resource    ./PageObjects/Navbar.robot
 Resource    ./PageObjects/Register.robot
 Resource    ./PageObjects/Login.robot
 Resource    ./PageObjects/Product.robot
+Resource    ./PageObjects/ShoppingCart.robot
 
 *** Keywords ***
 ## Register
-
 user is on the registration page
-    [Tags]    registrationPage
     Given navbar should be visible
     When user clicks register
-    Then check if we are in the registration page
+    Then verify page title  Register
 user registers with valid data
     [Tags]    register
     Given user fills the registration form
@@ -28,10 +27,9 @@ user logs out
 
 ## Login
 user is on the login page
-    [Tags]    loginPage
     Given navbar should be visible
     When user clicks login
-    Then check if we are in the login page
+    Then verify page title  Sign In
 user logs in with valid data
     [Tags]    login
     Given user is on the login page
@@ -40,10 +38,16 @@ user logs in with valid data
     Then user account should be visible in navbar
 
 ## Cart Management
-logged user adds item "Books" to cart
+logged user adds item "Book" to cart
     Given section bar should be visible
     When user selects "Books" section
+    And verify page title   Books
     Then product list should be visible
     When user selects the first product from the list
     And check if we are in a product page
     Then user adds the product to the cart
+
+cart should contain "Book"
+    Given navbar should be visible
+    When users clicks shopping cart
+    And verify page title   Shopping cart

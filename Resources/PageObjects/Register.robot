@@ -20,10 +20,6 @@ ${REGISTER_SUCCESS_MSG}       class=result
 ${ERRORS_LOCATOR}        //span[contains(@class, 'field-validation-error')]//span
 ${GLOBAL_ERROR_LOCATOR}          xpath=//div[contains(@class, 'validation-summary-errors')]//li
 *** Keywords ***
-check if we are in the registration page
-    Wait Until Page Contains Element    ${PAGE_TITLE_LOCATOR}
-    ${PAGE_TITLE_VALUE}=    Get Text    ${PAGE_TITLE_LOCATOR}
-    Should Be Equal As Strings    ${PAGE_TITLE_VALUE}    Register
 
 user fills the registration form
     Fill Registration Form    M    John  Doe    ${email}    Password123     Password123

@@ -11,16 +11,7 @@ ${PRODUCT_OVERVIEW_LOCATOR}          class=product-essential
 ${ADD_TO_CART_BUTTON_LOCATOR}          css=[id^="add-to-cart-button"]
 ${CART_QUANTITY_LOCATOR}                class=cart-qty
 *** Keywords ***
-user selects "Books" section
-    Click Element    ${BOOK_SECTION_BUTTON_LOCATOR}
-product list should be visible
-    Element Should Be Visible    ${PRODUCT_LIST_LOCATOR}
-user selects the first product from the list
-    Click Element    ${FIRST_PRODUCT_LOCATOR}
-check if we are in a product page
-    Element Should Be Visible    ${PRODUCT_OVERVIEW_LOCATOR}
-user adds the product to the cart
-    Click Element    ${ADD_TO_CART_BUTTON_LOCATOR}
+
 
 
 
