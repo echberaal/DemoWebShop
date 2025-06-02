@@ -10,21 +10,16 @@ ${Browser}      chrome
 ${URL}      https://demowebshop.tricentis.com/
 ${email}  john.doe103@e3xample.com
 *** Test Cases ***
-User registers, logs in, adds and removes item from cart
-    [Tags]    smoke
+User registers logs out then logs in
+    [Tags]    register      logout      login
     Given user is on the registration page
     When user registers with valid data
     And user logout after register
-    Given user logs in with valid data
-    And connected user adds item "Books" to cart
-##    Then cart should contain "Laptop"
-##     And user removes item "Laptop" from cart
-##     Then cart should be empty
-
+    Then user logs in with valid data
 User logs in adds from cart
     [Tags]    smoke
     Given user logs in with valid data
-    And connected user adds item "Books" to cart
+    And logged user adds item "Books" to cart
 ##    Then cart should contain "Laptop"
 ##     And user removes item "Laptop" from cart
 ##     Then cart should be empty

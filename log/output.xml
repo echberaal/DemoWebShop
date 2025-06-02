@@ -1,297 +1,2756 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-28T16:19:19.726478" rpa="false" schemaversion="5">
-<suite id="s1" name="Main" source="C:\Users\aechbera\PycharmProjects\dev\robot\Demo Web Shop\Tests\Main.robot">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-02T14:50:25.490158" rpa="false" schemaversion="5">
+<suite id="s1" name="Register" source="C:\Users\aechbera\PycharmProjects\dev\robot\Demo Web Shop\Tests\DataDriven Tests\Register.robot">
+<test id="s1-t1" name="The User Enters Register Credentials" line="14">
 <kw name="Begin Web Test" owner="Common" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:20.136870" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/'.</msg>
+<msg time="2025-06-02T14:50:25.894381" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-28T16:19:20.136608" elapsed="3.538109"/>
+<status status="PASS" start="2025-06-02T14:50:25.894109" elapsed="3.862759"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-28T16:19:23.675105" elapsed="0.046763"/>
+<status status="PASS" start="2025-06-02T14:50:29.757266" elapsed="0.036259"/>
 </kw>
-<kw name="check if we are in home page" owner="Common">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${TOPIC_HEADER_LOCATOR}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-05-28T16:19:23.722637" elapsed="0.013525"/>
+<status status="PASS" start="2025-06-02T14:50:25.893462" elapsed="3.900345"/>
 </kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:23.772210" level="INFO">${TOPIC_HEADER_VALUE} = Welcome to our store</msg>
-<var>${TOPIC_HEADER_VALUE}</var>
-<arg>${TOPIC_HEADER_LOCATOR}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T16:19:23.737708" elapsed="0.034635"/>
-</kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<arg>${TOPIC_HEADER_VALUE}</arg>
-<arg>Welcome to our store</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-05-28T16:19:23.772519" elapsed="0.000226"/>
-</kw>
-<status status="PASS" start="2025-05-28T16:19:23.722285" elapsed="0.050546"/>
-</kw>
-<status status="PASS" start="2025-05-28T16:19:20.136064" elapsed="3.636832"/>
-</kw>
-<test id="s1-t1" name="User logs in adds from cart" line="24">
-<kw name="Given user logs in with valid data" owner="App">
-<kw name="Given user is on the login page" owner="App">
-<kw name="Given navbar should be visible" owner="Navbar">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:23.802222" level="INFO">Element 'class=header-links' is displayed.</msg>
-<arg>${NAVBAR_LOCATOR}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-28T16:19:23.773985" elapsed="0.028408"/>
-</kw>
-<status status="PASS" start="2025-05-28T16:19:23.773798" elapsed="0.028695"/>
-</kw>
-<kw name="When user clicks login" owner="Navbar">
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:23.803134" level="INFO">Clicking element 'class=ico-login'.</msg>
-<arg>${LOGIN_NAVBAR_BUTTON_LOCATOR}</arg>
+<msg time="2025-06-02T14:50:29.795975" level="INFO">Clicking element 'id=gender-male'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T16:19:23.802948" elapsed="0.365774"/>
+<status status="PASS" start="2025-06-02T14:50:29.795563" elapsed="0.084621"/>
 </kw>
-<status status="PASS" start="2025-05-28T16:19:23.802692" elapsed="0.366291"/>
+<status status="PASS" start="2025-06-02T14:50:29.795254" elapsed="0.085064"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:29.880578" elapsed="0.000067"/>
 </kw>
-<kw name="Then check if we are in the login page" owner="Login">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${PAGE_TITLE_LOCATOR}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-05-28T16:19:24.169771" elapsed="0.011326"/>
+<status status="NOT RUN" start="2025-06-02T14:50:29.880395" elapsed="0.000306"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:50:29.795228" elapsed="0.085520"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:50:29.795027" elapsed="0.085784"/>
 </kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:24.193610" level="INFO">${PAGE_TITLE_VALUE} = Welcome, Please Sign In!</msg>
-<var>${PAGE_TITLE_VALUE}</var>
-<arg>${PAGE_TITLE_LOCATOR}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T16:19:24.181314" elapsed="0.012440"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${PAGE_TITLE_VALUE}</arg>
-<arg>Sign In</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-05-28T16:19:24.193976" elapsed="0.000253"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:24.208310" level="INFO">Element 'id=Email' is displayed.</msg>
-<arg>${EMAIL_INPUT_LOCATOR}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-28T16:19:24.194349" elapsed="0.014295"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:24.227451" level="INFO">Element 'id=Password' is displayed.</msg>
-<arg>${PASSWORD_INPUT_LOCATOR}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-28T16:19:24.209139" elapsed="0.018651"/>
-</kw>
-<status status="PASS" start="2025-05-28T16:19:24.169312" elapsed="0.058670"/>
-</kw>
-<status status="PASS" start="2025-05-28T16:19:23.773620" elapsed="0.454471"/>
-</kw>
-<kw name="When user fills the login form" owner="Login">
-<kw name="Fill Log In Form" owner="Login">
-<kw name="Fill Email" owner="Login">
+<kw name="Fill FirstName" owner="Register">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:24.230657" level="INFO">Typing text 'john.doe103@e3xample.com' into text field 'id=Email'.</msg>
+<msg time="2025-06-02T14:50:29.881459" level="INFO">Typing text 'John' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:29.881234" elapsed="0.081025"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:50:29.880944" elapsed="0.081494"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:29.963216" level="INFO">Typing text 'Doe' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:29.962998" elapsed="0.073664"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:50:29.962653" elapsed="0.074254"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:30.040508" level="INFO">Typing text 'helloTest1@example.com' into text field 'id=Email'.</msg>
 <arg>${EMAIL_INPUT_LOCATOR}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T16:19:24.230280" elapsed="0.102429"/>
+<status status="PASS" start="2025-06-02T14:50:30.039395" elapsed="0.077890"/>
 </kw>
 <arg>${email}</arg>
-<status status="PASS" start="2025-05-28T16:19:24.229752" elapsed="0.103235"/>
+<status status="PASS" start="2025-06-02T14:50:30.037271" elapsed="0.080179"/>
 </kw>
-<kw name="Fill Password" owner="Login">
+<kw name="Fill Password" owner="Register">
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:24.334547" level="INFO">Typing password into text field 'id=Password'.</msg>
-<msg time="2025-05-28T16:19:24.366011" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-06-02T14:50:30.118355" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:50:30.142168" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD_INPUT_LOCATOR}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T16:19:24.334162" elapsed="0.088788"/>
+<status status="PASS" start="2025-06-02T14:50:30.117996" elapsed="0.060813"/>
 </kw>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-28T16:19:24.333502" elapsed="0.089671"/>
+<status status="PASS" start="2025-06-02T14:50:30.117626" elapsed="0.061347"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:30.179674" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:50:30.206051" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:30.179457" elapsed="0.062091"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:50:30.179136" elapsed="0.062586"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:50:29.794588" elapsed="0.447207"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:30.242475" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:30.242277" elapsed="0.060359"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:30.241995" elapsed="0.060893"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:31.171104" level="INFO">@{errors} = [ ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:30.304053" elapsed="0.867183"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:31.186966" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:31.171431" elapsed="0.015721"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:50:31.187425" elapsed="0.000411"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:31.188830" elapsed="0.000173"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:31.189314" elapsed="0.000137"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:31.189660" elapsed="0.000135"/>
+</kw>
+<var name="${error}"/>
+<status status="NOT RUN" start="2025-06-02T14:50:31.188508" elapsed="0.001375"/>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="NOT RUN" start="2025-06-02T14:50:31.188032" elapsed="0.002023"/>
+</for>
+<status status="PASS" start="2025-06-02T14:50:30.303388" elapsed="0.886925"/>
+</kw>
+<arg>gender=M</arg>
+<arg>firstName=John</arg>
+<arg>lastName=Doe</arg>
+<arg>email=helloTest1@example.com</arg>
+<arg>password=Password123</arg>
+<arg>confirmPassword=Password123</arg>
+<status status="PASS" start="2025-06-02T14:50:29.794103" elapsed="1.396421"/>
+</kw>
+<doc>Valid male user with matching passwords</doc>
+<tag>register</tag>
+<tag>user</tag>
+<tag>Valid</tag>
+<status status="PASS" start="2025-06-02T14:50:25.892339" elapsed="5.298914"/>
+</test>
+<test id="s1-t2" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:31.195084" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:50:31.194826" elapsed="3.521344"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:50:34.716556" elapsed="0.035478"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:31.194426" elapsed="3.557953"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:34.754827" elapsed="0.000053"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:50:34.754577" elapsed="0.000364"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:34.755308" level="INFO">Clicking element 'id=gender-female'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:34.755095" elapsed="0.083848"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:34.754995" elapsed="0.084078"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:50:34.754551" elapsed="0.084585"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:50:34.754277" elapsed="0.084914"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:34.839866" level="INFO">Typing text 'Jane' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:34.839665" elapsed="0.084569"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:50:34.839363" elapsed="0.085042"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:34.925098" level="INFO">Typing text 'Smith' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:34.924894" elapsed="0.086638"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:50:34.924576" elapsed="0.087123"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:35.012355" level="INFO">Typing text 'helloTest2@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:35.012154" elapsed="0.082678"/>
 </kw>
 <arg>${email}</arg>
-<arg>Password123</arg>
-<status status="PASS" start="2025-05-28T16:19:24.229069" elapsed="0.194202"/>
+<status status="PASS" start="2025-06-02T14:50:35.011861" elapsed="0.083133"/>
 </kw>
-<status status="PASS" start="2025-05-28T16:19:24.228423" elapsed="0.194942"/>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:35.095702" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:50:35.120409" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:35.095489" elapsed="0.063488"/>
 </kw>
-<kw name="And user submits the login form" owner="Login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:24.424283" level="INFO">Clicking element 'xpath=/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input'.</msg>
-<arg>${LOGIN_BUTTON_LOCATOR}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T16:19:24.423989" elapsed="0.059607"/>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:50:35.095170" elapsed="0.063964"/>
 </kw>
-<status status="PASS" start="2025-05-28T16:19:24.423611" elapsed="0.060141"/>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:35.159982" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:50:35.183354" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:35.159665" elapsed="0.063040"/>
 </kw>
-<kw name="Then user account should be visible in navbar" owner="Navbar">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${ACCOUNT_NAVBAR_LOCATOR}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-05-28T16:19:24.484243" elapsed="0.008590"/>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:50:35.159300" elapsed="0.063560"/>
 </kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:25.017969" level="INFO">${ACCOUNT_NAVBAR_VALUE} = john.doe103@e3xample.com</msg>
-<var>${ACCOUNT_NAVBAR_VALUE}</var>
-<arg>${ACCOUNT_NAVBAR_LOCATOR}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T16:19:24.493077" elapsed="0.525040"/>
-</kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<arg>${ACCOUNT_NAVBAR_VALUE}</arg>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
 <arg>${email}</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-05-28T16:19:25.018335" elapsed="0.000299"/>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:50:34.753416" elapsed="0.469514"/>
 </kw>
-<status status="PASS" start="2025-05-28T16:19:24.483948" elapsed="0.534773"/>
-</kw>
-<status status="PASS" start="2025-05-28T16:19:23.773391" elapsed="1.245811"/>
-</kw>
-<kw name="And connected user adds item &quot;Books&quot; to cart" owner="App">
-<kw name="Given section bar should be visible" owner="Navbar">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:25.047536" level="INFO">Element 'class=header-menu' is displayed.</msg>
-<arg>${SECTION_BAR_LOCATOR}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-28T16:19:25.020644" elapsed="0.027073"/>
-</kw>
-<status status="PASS" start="2025-05-28T16:19:25.020280" elapsed="0.027547"/>
-</kw>
-<kw name="When user selects &quot;Books&quot; section" owner="Product">
+<kw name="When user submits the registration form" owner="Register">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:25.048665" level="INFO">Clicking element 'css=ul.top-menu &gt; li:first-child'.</msg>
-<arg>${BOOK_SECTION_BUTTON_LOCATOR}</arg>
+<msg time="2025-06-02T14:50:35.223560" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T16:19:25.048439" elapsed="0.480470"/>
+<status status="PASS" start="2025-06-02T14:50:35.223376" elapsed="2.004893"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${PAGE_TITLE_LOCATOR}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-05-28T16:19:25.529155" elapsed="0.009656"/>
+<status status="PASS" start="2025-06-02T14:50:35.223110" elapsed="2.005488"/>
 </kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:37.245177" level="INFO">@{errors} = [ ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:37.229599" elapsed="0.015687"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:37.258135" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:37.245469" elapsed="0.012774"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:50:37.258407" elapsed="0.000194"/>
+</kw>
+<for flavor="IN">
+<iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:25.554569" level="INFO">${PAGE_TITLE_VALUE} = Books</msg>
-<var>${PAGE_TITLE_VALUE}</var>
-<arg>${PAGE_TITLE_LOCATOR}</arg>
+<var>${text}</var>
+<arg>${error}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T16:19:25.539027" elapsed="0.015659"/>
+<status status="NOT RUN" start="2025-06-02T14:50:37.258935" elapsed="0.000053"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${PAGE_TITLE_VALUE}</arg>
-<arg>Books</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-05-28T16:19:25.554856" elapsed="0.000206"/>
+<kw name="Log" owner="BuiltIn">
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:37.259073" elapsed="0.000048"/>
 </kw>
-<status status="PASS" start="2025-05-28T16:19:25.048069" elapsed="0.507078"/>
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:37.259198" elapsed="0.000048"/>
 </kw>
-<kw name="Then product list should be visible" owner="Product">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:25.569203" level="INFO">Element 'class=product-grid' is displayed.</msg>
-<arg>${PRODUCT_LIST_LOCATOR}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-28T16:19:25.555505" elapsed="0.013900"/>
+<var name="${error}"/>
+<status status="NOT RUN" start="2025-06-02T14:50:37.258823" elapsed="0.000474"/>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="NOT RUN" start="2025-06-02T14:50:37.258681" elapsed="0.000669"/>
+</for>
+<status status="PASS" start="2025-06-02T14:50:37.229046" elapsed="0.030390"/>
 </kw>
-<status status="PASS" start="2025-05-28T16:19:25.555292" elapsed="0.014218"/>
+<arg>gender=F</arg>
+<arg>firstName=Jane</arg>
+<arg>lastName=Smith</arg>
+<arg>email=helloTest2@example.com</arg>
+<arg>password=Password456</arg>
+<arg>confirmPassword=Password456</arg>
+<status status="PASS" start="2025-06-02T14:50:34.752728" elapsed="2.506769"/>
 </kw>
-<kw name="When user selects the first product from the list" owner="Product">
+<doc>Valid female user with matching passwords</doc>
+<tag>register</tag>
+<tag>user</tag>
+<tag>Valid</tag>
+<status status="PASS" start="2025-06-02T14:50:31.191838" elapsed="6.068071"/>
+</test>
+<test id="s1-t3" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:37.262009" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:50:37.261834" elapsed="4.184848"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:50:41.447136" elapsed="0.040886"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:37.261589" elapsed="4.226685"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:25.570131" level="INFO">Clicking element 'css=div.product-grid &gt; div:nth-child(1) a'.</msg>
-<arg>${FIRST_PRODUCT_LOCATOR}</arg>
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-28T16:19:25.569945" elapsed="1.152492"/>
+<status status="NOT RUN" start="2025-06-02T14:50:41.490068" elapsed="0.000066"/>
 </kw>
-<status status="PASS" start="2025-05-28T16:19:25.569685" elapsed="1.152920"/>
-</kw>
-<kw name="And check if we are in a product page" owner="Product">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-05-28T16:19:26.739500" level="INFO">Element 'class=product-essential' is displayed.</msg>
-<arg>${PRODUCT_OVERVIEW_LOCATOR}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-28T16:19:26.723135" elapsed="0.016608"/>
-</kw>
-<status status="PASS" start="2025-05-28T16:19:26.722808" elapsed="0.017097"/>
-</kw>
-<kw name="Then user adds the product to the cart" owner="Product">
-<kw name="Convert Parenthesized To Number" owner="Product">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-28T16:19:26.741326" level="FAIL">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</msg>
-<var>${number}</var>
-<arg>int('${value}'.strip('()'))</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="FAIL" start="2025-05-28T16:19:26.740994" elapsed="0.000553">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</status>
-</kw>
-<return>
-<value>${number}</value>
-<status status="NOT RUN" start="2025-05-28T16:19:26.741654" elapsed="0.000427"/>
-</return>
-<var>${oldQty}</var>
-<arg>${CART_QUANTITY_LOCATOR}</arg>
-<status status="FAIL" start="2025-05-28T16:19:26.740655" elapsed="0.001564">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</status>
-</kw>
+<status status="NOT RUN" start="2025-06-02T14:50:41.489831" elapsed="0.000385"/>
+</branch>
+<branch type="ELSE">
 <kw name="Click Element" owner="SeleniumLibrary">
-<arg>${ADD_TO_CART_BUTTON_LOCATOR}</arg>
+<msg time="2025-06-02T14:50:41.490649" level="INFO">Clicking element 'id=gender-female'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-05-28T16:19:26.742357" elapsed="0.000062"/>
+<status status="PASS" start="2025-06-02T14:50:41.490418" elapsed="0.099272"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-05-28T16:19:26.742511" elapsed="0.000059"/>
+<status status="PASS" start="2025-06-02T14:50:41.490304" elapsed="0.099605"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:50:41.489808" elapsed="0.100215"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:50:41.489560" elapsed="0.100575"/>
 </kw>
-<kw name="Convert Parenthesized To Number" owner="Product">
-<var>${newQty}</var>
-<arg>${CART_QUANTITY_LOCATOR}</arg>
-<status status="NOT RUN" start="2025-05-28T16:19:26.742695" elapsed="0.000059"/>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:41.591212" level="INFO">Typing text 'Jane' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:41.590977" elapsed="0.115631"/>
 </kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<arg>${oldQty}</arg>
-<arg>${newQty}+1</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2025-05-28T16:19:26.742846" elapsed="0.000106"/>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:50:41.590477" elapsed="0.116401"/>
 </kw>
-<status status="FAIL" start="2025-05-28T16:19:26.740196" elapsed="0.002852">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</status>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:41.707759" level="INFO">Typing text 'Smith' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:41.707503" elapsed="0.080649"/>
 </kw>
-<status status="FAIL" start="2025-05-28T16:19:25.019634" elapsed="1.723497">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</status>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:50:41.707102" elapsed="0.081331"/>
 </kw>
-<tag>smoke</tag>
-<status status="FAIL" start="2025-05-28T16:19:23.772967" elapsed="2.970297">Evaluating expression "int('class=cart-qty'.strip('()'))" failed: ValueError: invalid literal for int() with base 10: 'class=cart-qty'</status>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:41.789427" level="INFO">Typing text 'helloTest2@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:41.789125" elapsed="0.076957"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:50:41.788683" elapsed="0.077645"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:41.867502" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:50:41.890874" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:41.867089" elapsed="0.066556"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:50:41.866650" elapsed="0.067219"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:41.935102" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:50:41.960726" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:41.934719" elapsed="0.067706"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:50:41.934130" elapsed="0.068456"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:50:41.489091" elapsed="0.513567"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:42.003297" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:42.003108" elapsed="0.724296"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:42.002842" elapsed="0.724730"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:42.746195" level="INFO">@{errors} = [ ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:42.728121" elapsed="0.018216"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:42.761241" level="INFO">@{global_error} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="6d47b8a329fb025ffffbffc04a6357c5", element="f.91E0D36C9CE7EEC7186312067A2FCF05.d.8AE408480F7FB5FBD1735E70F3302C85.e.89")&gt; ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:42.746525" elapsed="0.014838"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:50:42.761523" elapsed="0.000201"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:42.778169" level="INFO">${text} = The specified email already exists</msg>
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:42.762055" elapsed="0.016347"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-02T14:50:42.778940" level="INFO">Erreur détectée : The specified email already exists</msg>
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-02T14:50:42.778644" elapsed="0.000390"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-06-02T14:50:42.779394" level="INFO">Length is 34.</msg>
+<msg time="2025-06-02T14:50:42.779554" level="FAIL">Le champ contient une erreur : The specified email already exists</msg>
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="FAIL" start="2025-06-02T14:50:42.779171" elapsed="0.000548">Le champ contient une erreur : The specified email already exists</status>
+</kw>
+<var name="${error}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6d47b8a329fb025ffffbffc04a6357c5", element="f.91E0D36C9CE7EEC7186312067A2FCF05.d.8AE408480F7FB5FBD1735E70F3302C85.e.89")&gt;</var>
+<status status="FAIL" start="2025-06-02T14:50:42.761947" elapsed="0.018030">Le champ contient une erreur : The specified email already exists</status>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="FAIL" start="2025-06-02T14:50:42.761797" elapsed="0.018325">Le champ contient une erreur : The specified email already exists</status>
+</for>
+<status status="FAIL" start="2025-06-02T14:50:42.727804" elapsed="0.052533">Le champ contient une erreur : The specified email already exists</status>
+</kw>
+<arg>gender=F</arg>
+<arg>firstName=Jane</arg>
+<arg>lastName=Smith</arg>
+<arg>email=helloTest2@example.com</arg>
+<arg>password=Password456</arg>
+<arg>confirmPassword=Password456</arg>
+<status status="FAIL" start="2025-06-02T14:50:41.488580" elapsed="1.292159">Le champ contient une erreur : The specified email already exists</status>
+</kw>
+<doc>Same Email</doc>
+<tag>register</tag>
+<tag>user</tag>
+<tag>Valid</tag>
+<status status="FAIL" start="2025-06-02T14:50:37.260356" elapsed="5.520895">Le champ contient une erreur : The specified email already exists</status>
+</test>
+<test id="s1-t4" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:42.784120" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:50:42.783896" elapsed="4.684181"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:50:47.468380" elapsed="0.033704"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:42.783402" elapsed="4.718859"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:47.503992" elapsed="0.000056"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:50:47.503773" elapsed="0.000339"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:47.504439" level="INFO">Clicking element 'id=gender-female'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:47.504259" elapsed="0.097606"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:47.504165" elapsed="0.097907"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:50:47.503752" elapsed="0.098385"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:50:47.503517" elapsed="0.098685"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:47.602954" level="INFO">Typing text 'John' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:47.602725" elapsed="0.102630"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:50:47.602374" elapsed="0.103169"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:47.706413" level="INFO">Typing text 'Doe' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:47.706099" elapsed="0.101151"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:50:47.705754" elapsed="0.101754"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:47.809526" level="INFO">Typing text 'helloTest3@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:47.808349" elapsed="0.083582"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:50:47.807786" elapsed="0.084423"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:47.893417" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:50:47.919218" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:47.892963" elapsed="0.069067"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:50:47.892457" elapsed="0.069943"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:47.963658" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:50:47.990867" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:47.963312" elapsed="0.070304"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:50:47.962688" elapsed="0.071092"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:50:47.502926" elapsed="0.530928"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:48.034492" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:48.034302" elapsed="0.888347"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:48.034037" elapsed="0.888844"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:48.944167" level="INFO">@{errors} = [ ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:48.923568" elapsed="0.020791"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:48.960070" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:48.944686" elapsed="0.015525"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:50:48.960429" elapsed="0.000294"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:48.961670" elapsed="0.000637"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:48.962563" elapsed="0.000101"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:48.962859" elapsed="0.000131"/>
+</kw>
+<var name="${error}"/>
+<status status="NOT RUN" start="2025-06-02T14:50:48.961192" elapsed="0.001908"/>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="NOT RUN" start="2025-06-02T14:50:48.960884" elapsed="0.002353"/>
+</for>
+<status status="PASS" start="2025-06-02T14:50:48.923186" elapsed="0.040260"/>
+</kw>
+<arg>gender=</arg>
+<arg>firstName=John</arg>
+<arg>lastName=Doe</arg>
+<arg>email=helloTest3@example.com</arg>
+<arg>password=Password123</arg>
+<arg>confirmPassword=Password123</arg>
+<status status="PASS" start="2025-06-02T14:50:47.502476" elapsed="1.461041"/>
+</kw>
+<doc>Missing gender</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="PASS" start="2025-06-02T14:50:42.781787" elapsed="6.181891"/>
+</test>
+<test id="s1-t5" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:48.967194" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:50:48.966801" elapsed="4.678159"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:50:53.645201" elapsed="0.039603"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:48.966239" elapsed="4.718736"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:53.687022" elapsed="0.000087"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:50:53.686809" elapsed="0.000389"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:53.687689" level="INFO">Clicking element 'id=gender-female'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:53.687464" elapsed="0.083372"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:53.687287" elapsed="0.083691"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:50:53.686786" elapsed="0.084253"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:50:53.686555" elapsed="0.084539"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:53.772061" level="INFO">Typing text 'Jane' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:53.771582" elapsed="0.093579"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:50:53.771268" elapsed="0.094097"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:53.866841" level="INFO">Typing text 'Smith' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:53.866278" elapsed="0.078798"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:50:53.865651" elapsed="0.079644"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:53.946447" level="INFO">Typing text 'helloTest4@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:53.946144" elapsed="0.079628"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:50:53.945555" elapsed="0.080424"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:54.026893" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:50:54.054134" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:54.026617" elapsed="0.068836"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:50:54.026179" elapsed="0.069433"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:54.096266" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:50:54.122107" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:54.096063" elapsed="0.067869"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:50:54.095775" elapsed="0.068339"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:50:53.686037" elapsed="0.478147"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:54.164868" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:54.164663" elapsed="1.054760"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:54.164391" elapsed="1.055210"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:55.232738" level="INFO">@{errors} = [ ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:55.220131" elapsed="0.012815"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:55.244847" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:50:55.233264" elapsed="0.011704"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:50:55.245143" elapsed="0.000209"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:55.245715" elapsed="0.000057"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:55.246120" elapsed="0.000146"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2025-06-02T14:50:55.246384" elapsed="0.000063"/>
+</kw>
+<var name="${error}"/>
+<status status="NOT RUN" start="2025-06-02T14:50:55.245599" elapsed="0.000899"/>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="NOT RUN" start="2025-06-02T14:50:55.245434" elapsed="0.001127"/>
+</for>
+<status status="PASS" start="2025-06-02T14:50:55.219829" elapsed="0.026828"/>
+</kw>
+<arg>gender=X</arg>
+<arg>firstName=Jane</arg>
+<arg>lastName=Smith</arg>
+<arg>email=helloTest4@example.com</arg>
+<arg>password=Password456</arg>
+<arg>confirmPassword=Password456</arg>
+<status status="PASS" start="2025-06-02T14:50:53.685250" elapsed="1.561474"/>
+</kw>
+<doc>Invalid gender value</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="PASS" start="2025-06-02T14:50:48.964226" elapsed="6.282625"/>
+</test>
+<test id="s1-t6" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:50:55.249152" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:50:55.248923" elapsed="5.005594"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:51:00.255165" elapsed="0.060137"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:50:55.248628" elapsed="5.066995"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:00.319155" level="INFO">Clicking element 'id=gender-male'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:00.318721" elapsed="0.167189"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:00.318312" elapsed="0.167845"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:00.486680" elapsed="0.000185"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:51:00.486293" elapsed="0.000689"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:51:00.318269" elapsed="0.168814"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:51:00.317850" elapsed="0.169336"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:00.489480" level="INFO">Typing text '' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:00.488783" elapsed="0.120974"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:51:00.487715" elapsed="0.122265"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:00.610862" level="INFO">Typing text 'Doe' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:00.610579" elapsed="0.090611"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:51:00.610191" elapsed="0.091214"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:00.702227" level="INFO">Typing text 'helloTest5@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:00.701974" elapsed="0.142023"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:51:00.701603" elapsed="0.142610"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:00.845160" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:51:00.875829" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:00.844862" elapsed="0.094553"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:51:00.844446" elapsed="0.095178"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:00.940761" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:51:00.969417" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:00.940359" elapsed="0.076422"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:00.939846" elapsed="0.077155"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:00.316918" elapsed="0.700174"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:01.017823" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:01.017605" elapsed="0.075361"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:01.017307" elapsed="0.075874"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:01.113657" level="INFO">@{errors} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="3f70b03955f55a061c75fdb0a0a169df", element="f.15489A9E16CA844BE7AF2A7D34F195E6.d.A51B1D226A223791B8C3D3BB019D61CA.e.40")&gt; ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:01.093865" elapsed="0.019979"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:01.127034" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:01.114109" elapsed="0.013055"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:51:01.127350" elapsed="0.000258"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:01.144204" level="INFO">${text} = First name is required.</msg>
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:01.128291" elapsed="0.016058"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-02T14:51:01.144797" level="INFO">Erreur détectée : First name is required.</msg>
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-02T14:51:01.144544" elapsed="0.000356"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-06-02T14:51:01.145260" level="INFO">Length is 23.</msg>
+<msg time="2025-06-02T14:51:01.145384" level="FAIL">Le champ contient une erreur : First name is required.</msg>
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="FAIL" start="2025-06-02T14:51:01.145043" elapsed="0.000461">Le champ contient une erreur : First name is required.</status>
+</kw>
+<var name="${error}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3f70b03955f55a061c75fdb0a0a169df", element="f.15489A9E16CA844BE7AF2A7D34F195E6.d.A51B1D226A223791B8C3D3BB019D61CA.e.40")&gt;</var>
+<status status="FAIL" start="2025-06-02T14:51:01.128139" elapsed="0.017467">Le champ contient une erreur : First name is required.</status>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="FAIL" start="2025-06-02T14:51:01.127918" elapsed="0.017807">Le champ contient une erreur : First name is required.</status>
+</for>
+<status status="FAIL" start="2025-06-02T14:51:01.093505" elapsed="0.052398">Le champ contient une erreur : First name is required.</status>
+</kw>
+<arg>gender=M</arg>
+<arg>firstName=</arg>
+<arg>lastName=Doe</arg>
+<arg>email=helloTest5@example.com</arg>
+<arg>password=Password123</arg>
+<arg>confirmPassword=Password123</arg>
+<status status="FAIL" start="2025-06-02T14:51:00.315997" elapsed="0.830050">Le champ contient une erreur : First name is required.</status>
+</kw>
+<doc>Missing first name</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="FAIL" start="2025-06-02T14:50:55.247351" elapsed="5.898959">Le champ contient une erreur : First name is required.</status>
+</test>
+<test id="s1-t7" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:01.149987" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:51:01.149746" elapsed="4.468497"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:51:05.619134" elapsed="0.737522"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:01.149301" elapsed="5.207693"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:06.360516" elapsed="0.000170"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:51:06.359993" elapsed="0.000855"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:06.361749" level="INFO">Clicking element 'id=gender-female'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:06.361273" elapsed="0.125598"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:06.360988" elapsed="0.126210"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:51:06.359934" elapsed="0.127404"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:51:06.359295" elapsed="0.128181"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:06.489594" level="INFO">Typing text 'J' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:06.488873" elapsed="0.124114"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:51:06.488055" elapsed="0.125224"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:06.614632" level="INFO">Typing text 'Smith' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:06.614218" elapsed="0.086437"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:51:06.613581" elapsed="0.087433"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:06.702386" level="INFO">Typing text 'helloTest6@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:06.702044" elapsed="0.101796"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:51:06.701360" elapsed="0.102880"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:06.805283" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:51:06.836702" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:06.804958" elapsed="0.084926"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:51:06.804526" elapsed="0.085543"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:06.890851" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:51:06.922241" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:06.890609" elapsed="0.084253"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:06.890260" elapsed="0.084836"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:06.358326" elapsed="0.616900"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:06.976025" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:06.975799" elapsed="0.905131"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:06.975449" elapsed="0.905654"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:07.897502" level="INFO">@{errors} = [ ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:07.881796" elapsed="0.015935"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:07.910725" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:07.898044" elapsed="0.012857"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:51:07.911171" elapsed="0.000406"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:07.912093" elapsed="0.000064"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:07.912260" elapsed="0.000056"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:07.912399" elapsed="0.000068"/>
+</kw>
+<var name="${error}"/>
+<status status="NOT RUN" start="2025-06-02T14:51:07.911950" elapsed="0.000587"/>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="NOT RUN" start="2025-06-02T14:51:07.911714" elapsed="0.000886"/>
+</for>
+<status status="PASS" start="2025-06-02T14:51:07.881492" elapsed="0.031221"/>
+</kw>
+<arg>gender=F</arg>
+<arg>firstName=J</arg>
+<arg>lastName=Smith</arg>
+<arg>email=helloTest6@example.com</arg>
+<arg>password=Password456</arg>
+<arg>confirmPassword=Password456</arg>
+<status status="PASS" start="2025-06-02T14:51:06.357403" elapsed="1.555377"/>
+</kw>
+<doc>First name too short</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="PASS" start="2025-06-02T14:51:01.146993" elapsed="6.765912"/>
+</test>
+<test id="s1-t8" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:07.915027" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:51:07.914828" elapsed="4.896905"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:51:12.812031" elapsed="0.050507"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:07.914531" elapsed="4.948327"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:12.865765" level="INFO">Clicking element 'id=gender-male'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:12.865472" elapsed="0.116004"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:12.865162" elapsed="0.116568"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:12.982235" elapsed="0.000152"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:51:12.981883" elapsed="0.000725"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:51:12.865116" elapsed="0.117597"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:51:12.864724" elapsed="0.118101"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:12.983754" level="INFO">Typing text 'John' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:12.983461" elapsed="0.107555"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:51:12.983047" elapsed="0.108179"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:13.092248" level="INFO">Typing text '' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.091988" elapsed="0.074564"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:51:13.091527" elapsed="0.075330"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:13.168120" level="INFO">Typing text 'helloTest7@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.167733" elapsed="0.104577"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:51:13.167164" elapsed="0.105329"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:13.273610" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:51:13.306815" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.273187" elapsed="0.085771"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:51:13.272682" elapsed="0.086453"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:13.359908" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:51:13.391003" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.359658" elapsed="0.091139"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:13.359318" elapsed="0.091687"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:12.864075" elapsed="0.587025"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:13.452019" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.451703" elapsed="0.089257"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:13.451323" elapsed="0.089868"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:13.560431" level="INFO">@{errors} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="ffb53bed38498e90676b9ac196c84c74", element="f.BB956EB49B5DA593854A0432B07FEB02.d.612952A8DC843E62C57A78A5AFBF8876.e.52")&gt; ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.542096" elapsed="0.018505"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:13.575045" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.560861" elapsed="0.014374"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.575541" elapsed="0.000389"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:13.592033" level="INFO">${text} = Last name is required.</msg>
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.576578" elapsed="0.015599"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-02T14:51:13.592624" level="INFO">Erreur détectée : Last name is required.</msg>
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.592387" elapsed="0.000334"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-06-02T14:51:13.593067" level="INFO">Length is 22.</msg>
+<msg time="2025-06-02T14:51:13.593190" level="FAIL">Le champ contient une erreur : Last name is required.</msg>
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="FAIL" start="2025-06-02T14:51:13.592854" elapsed="0.000451">Le champ contient une erreur : Last name is required.</status>
+</kw>
+<var name="${error}">&lt;selenium.webdriver.remote.webelement.WebElement (session="ffb53bed38498e90676b9ac196c84c74", element="f.BB956EB49B5DA593854A0432B07FEB02.d.612952A8DC843E62C57A78A5AFBF8876.e.52")&gt;</var>
+<status status="FAIL" start="2025-06-02T14:51:13.576394" elapsed="0.017031">Le champ contient une erreur : Last name is required.</status>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="FAIL" start="2025-06-02T14:51:13.576093" elapsed="0.017444">Le champ contient une erreur : Last name is required.</status>
+</for>
+<status status="FAIL" start="2025-06-02T14:51:13.541457" elapsed="0.052225">Le champ contient une erreur : Last name is required.</status>
+</kw>
+<arg>gender=M</arg>
+<arg>firstName=John</arg>
+<arg>lastName=</arg>
+<arg>email=helloTest7@example.com</arg>
+<arg>password=Password123</arg>
+<arg>confirmPassword=Password123</arg>
+<status status="FAIL" start="2025-06-02T14:51:12.863270" elapsed="0.730520">Le champ contient une erreur : Last name is required.</status>
+</kw>
+<doc>Missing last name</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="FAIL" start="2025-06-02T14:51:07.913335" elapsed="5.680641">Le champ contient une erreur : Last name is required.</status>
+</test>
+<test id="s1-t9" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:13.596558" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:51:13.596255" elapsed="5.608736"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:51:19.205253" elapsed="0.038951"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:13.595884" elapsed="5.648592"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:19.247249" elapsed="0.000179"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:51:19.246823" elapsed="0.000782"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:19.248742" level="INFO">Clicking element 'id=gender-female'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:19.248257" elapsed="0.097926"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:19.247851" elapsed="0.098563"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:51:19.246753" elapsed="0.099779"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:51:19.246224" elapsed="0.100409"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:19.348133" level="INFO">Typing text 'Jane' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:19.347531" elapsed="0.124482"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:51:19.346914" elapsed="0.125280"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:19.473006" level="INFO">Typing text 'S' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:19.472749" elapsed="0.091109"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:51:19.472393" elapsed="0.091674"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:19.565377" level="INFO">Typing text 'helloTest8@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:19.564920" elapsed="0.117588"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:51:19.564299" elapsed="0.118458"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:19.683667" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:51:19.720244" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:19.683359" elapsed="0.097741"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:51:19.682971" elapsed="0.098375"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:19.782680" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:51:19.819814" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:19.782209" elapsed="0.096968"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:19.781627" elapsed="0.098080"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:19.245531" elapsed="0.634359"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:19.880806" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:19.880547" elapsed="0.898605"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:19.880175" elapsed="0.899219"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:20.799491" level="INFO">@{errors} = [ ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:20.780228" elapsed="0.019395"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:20.815673" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:20.799817" elapsed="0.015996"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:51:20.816000" elapsed="0.000215"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:20.816695" elapsed="0.000137"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:20.816978" elapsed="0.000065"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:20.817166" elapsed="0.000068"/>
+</kw>
+<var name="${error}"/>
+<status status="NOT RUN" start="2025-06-02T14:51:20.816507" elapsed="0.000791"/>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="NOT RUN" start="2025-06-02T14:51:20.816321" elapsed="0.001116"/>
+</for>
+<status status="PASS" start="2025-06-02T14:51:20.779824" elapsed="0.037807"/>
+</kw>
+<arg>gender=F</arg>
+<arg>firstName=Jane</arg>
+<arg>lastName=S</arg>
+<arg>email=helloTest8@example.com</arg>
+<arg>password=Password456</arg>
+<arg>confirmPassword=Password456</arg>
+<status status="PASS" start="2025-06-02T14:51:19.244762" elapsed="1.573000"/>
+</kw>
+<doc>Last name too short</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="PASS" start="2025-06-02T14:51:13.594459" elapsed="7.223560"/>
+</test>
+<test id="s1-t10" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:20.820473" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:51:20.820279" elapsed="5.118677"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:51:25.939181" elapsed="0.035652"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:20.819992" elapsed="5.155049"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:25.976854" level="INFO">Clicking element 'id=gender-male'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:25.976624" elapsed="0.096834"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:25.976359" elapsed="0.097335"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:26.074120" elapsed="0.000141"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:51:26.073816" elapsed="0.000550"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:51:25.976335" elapsed="0.098125"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:51:25.976147" elapsed="0.098416"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:26.075316" level="INFO">Typing text 'John' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.075089" elapsed="0.100325"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:51:26.074772" elapsed="0.100957"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:26.176741" level="INFO">Typing text 'Doe' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.176466" elapsed="0.083232"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:51:26.176026" elapsed="0.083853"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:26.260658" level="INFO">Typing text '' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.260421" elapsed="0.063548"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:51:26.260074" elapsed="0.064086"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:26.324902" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:51:26.354760" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.324677" elapsed="0.080688"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:51:26.324345" elapsed="0.081227"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:26.406308" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:51:26.435180" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.406082" elapsed="0.080370"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:26.405760" elapsed="0.081081"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:25.975711" elapsed="0.511242"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:26.487657" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.487446" elapsed="0.077538"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:26.487160" elapsed="0.078080"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:26.581498" level="INFO">@{errors} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="84ea8ee5932cdc40a948afb9050dc12f", element="f.74C6C3863CC33E212C0199AE1330B784.d.5C4E333DDEF99E29CC41F65697C46E58.e.52")&gt; ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.565973" elapsed="0.015666"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:26.595578" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.581880" elapsed="0.013882"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.596050" elapsed="0.000364"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:26.612465" level="INFO">${text} = Email is required.</msg>
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.597077" elapsed="0.015586"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-02T14:51:26.613798" level="INFO">Erreur détectée : Email is required.</msg>
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.613079" elapsed="0.001009"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-06-02T14:51:26.614534" level="INFO">Length is 18.</msg>
+<msg time="2025-06-02T14:51:26.614686" level="FAIL">Le champ contient une erreur : Email is required.</msg>
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="FAIL" start="2025-06-02T14:51:26.614278" elapsed="0.000520">Le champ contient une erreur : Email is required.</status>
+</kw>
+<var name="${error}">&lt;selenium.webdriver.remote.webelement.WebElement (session="84ea8ee5932cdc40a948afb9050dc12f", element="f.74C6C3863CC33E212C0199AE1330B784.d.5C4E333DDEF99E29CC41F65697C46E58.e.52")&gt;</var>
+<status status="FAIL" start="2025-06-02T14:51:26.596856" elapsed="0.018044">Le champ contient une erreur : Email is required.</status>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="FAIL" start="2025-06-02T14:51:26.596570" elapsed="0.018428">Le champ contient une erreur : Email is required.</status>
+</for>
+<status status="FAIL" start="2025-06-02T14:51:26.565551" elapsed="0.049584">Le champ contient une erreur : Email is required.</status>
+</kw>
+<arg>gender=M</arg>
+<arg>firstName=John</arg>
+<arg>lastName=Doe</arg>
+<arg>email=</arg>
+<arg>password=Password123</arg>
+<arg>confirmPassword=Password123</arg>
+<status status="FAIL" start="2025-06-02T14:51:25.975269" elapsed="0.639971">Le champ contient une erreur : Email is required.</status>
+</kw>
+<doc>Missing email</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="FAIL" start="2025-06-02T14:51:20.818603" elapsed="5.796831">Le champ contient une erreur : Email is required.</status>
+</test>
+<test id="s1-t11" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:26.618110" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:51:26.617810" elapsed="4.579128"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:51:31.197384" elapsed="0.720389"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:26.617409" elapsed="5.300705"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:31.921289" elapsed="0.000128"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:51:31.920850" elapsed="0.000715"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:31.922503" level="INFO">Clicking element 'id=gender-female'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:31.922041" elapsed="0.247125"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:31.921716" elapsed="0.247750"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:51:31.920805" elapsed="0.248830"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:51:31.920357" elapsed="0.249425"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:32.171372" level="INFO">Typing text 'Jane' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:32.170836" elapsed="0.244838"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:51:32.170153" elapsed="0.245828"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:32.417464" level="INFO">Typing text 'Smith' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:32.416990" elapsed="0.250426"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:51:32.416325" elapsed="0.251574"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:32.669771" level="INFO">Typing text 'helloTest9@com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:32.669277" elapsed="0.174113"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:51:32.668404" elapsed="0.175473"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:32.846548" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:51:32.911931" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:32.845794" elapsed="0.174633"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:51:32.844799" elapsed="0.176057"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:33.023190" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:51:33.075103" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:33.022576" elapsed="0.148051"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:33.021424" elapsed="0.149607"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:31.919427" elapsed="1.251827"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:33.172961" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:33.172402" elapsed="0.134835"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:33.171732" elapsed="0.135844"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:33.338785" level="INFO">@{errors} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="46b9c5479be8f4a9232ad039d49246f2", element="f.897203C9AE70CA3676C79AD59025A50F.d.C21C46440EABF4A3EF819D1478805184.e.53")&gt; ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:33.308856" elapsed="0.030171"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:33.357133" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:33.339345" elapsed="0.018017"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:51:33.357723" elapsed="0.000565"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:33.381786" level="INFO">${text} = Wrong email</msg>
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:33.359375" elapsed="0.022585"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-02T14:51:33.382510" level="INFO">Erreur détectée : Wrong email</msg>
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-02T14:51:33.382215" elapsed="0.000410"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-06-02T14:51:33.383139" level="INFO">Length is 11.</msg>
+<msg time="2025-06-02T14:51:33.383300" level="FAIL">Le champ contient une erreur : Wrong email</msg>
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="FAIL" start="2025-06-02T14:51:33.382810" elapsed="0.000633">Le champ contient une erreur : Wrong email</status>
+</kw>
+<var name="${error}">&lt;selenium.webdriver.remote.webelement.WebElement (session="46b9c5479be8f4a9232ad039d49246f2", element="f.897203C9AE70CA3676C79AD59025A50F.d.C21C46440EABF4A3EF819D1478805184.e.53")&gt;</var>
+<status status="FAIL" start="2025-06-02T14:51:33.358947" elapsed="0.024621">Le champ contient une erreur : Wrong email</status>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="FAIL" start="2025-06-02T14:51:33.358503" elapsed="0.025197">Le champ contient une erreur : Wrong email</status>
+</for>
+<status status="FAIL" start="2025-06-02T14:51:33.308286" elapsed="0.075609">Le champ contient une erreur : Wrong email</status>
+</kw>
+<arg>gender=F</arg>
+<arg>firstName=Jane</arg>
+<arg>lastName=Smith</arg>
+<arg>email=helloTest9@com</arg>
+<arg>password=Password456</arg>
+<arg>confirmPassword=Password456</arg>
+<status status="FAIL" start="2025-06-02T14:51:31.918488" elapsed="1.465563">Le champ contient une erreur : Wrong email</status>
+</kw>
+<doc>Invalid email format</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="FAIL" start="2025-06-02T14:51:26.615719" elapsed="6.768657">Le champ contient une erreur : Wrong email</status>
+</test>
+<test id="s1-t12" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:33.389367" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:51:33.388741" elapsed="6.280836"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:51:39.670069" elapsed="0.069747"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:33.387885" elapsed="6.352392"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:39.744678" level="INFO">Clicking element 'id=gender-male'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:39.743873" elapsed="0.142189"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:39.743251" elapsed="0.143264"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:39.887429" elapsed="0.000204"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:51:39.886745" elapsed="0.001039"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:51:39.743197" elapsed="0.144696"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:51:39.742678" elapsed="0.145356"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:39.889464" level="INFO">Typing text 'John' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:39.888997" elapsed="0.127614"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:51:39.888362" elapsed="0.128647"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:40.018694" level="INFO">Typing text 'Doe' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.018031" elapsed="0.097591"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:51:40.017371" elapsed="0.098689"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:40.117518" level="INFO">Typing text 'helloTest10@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.117087" elapsed="0.136672"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:51:40.116413" elapsed="0.137591"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:40.254925" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:51:40.287575" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.254644" elapsed="0.075775"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:51:40.254231" elapsed="0.076502"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:40.332068" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:51:40.364039" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.331626" elapsed="0.069084"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:40.331046" elapsed="0.069859"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:39.741666" elapsed="0.659343"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:40.401777" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.401547" elapsed="0.086382"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:40.401230" elapsed="0.086891"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:40.504295" level="INFO">@{errors} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="4fe553002f78abb7081493861e1b7be9", element="f.F75FCEB3CAEEB232C455B662D6947349.d.39F96F10AE05516ECCB2FFD135C79558.e.55")&gt; | &lt;selenium.webdr...</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.488725" elapsed="0.015739"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:40.519079" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.504695" elapsed="0.014537"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.519467" elapsed="0.000324"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:40.534619" level="INFO">${text} = Password is required.</msg>
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.520303" elapsed="0.014514"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-02T14:51:40.535467" level="INFO">Erreur détectée : Password is required.</msg>
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.535119" elapsed="0.000505"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-06-02T14:51:40.536210" level="INFO">Length is 21.</msg>
+<msg time="2025-06-02T14:51:40.536404" level="FAIL">Le champ contient une erreur : Password is required.</msg>
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="FAIL" start="2025-06-02T14:51:40.535878" elapsed="0.000683">Le champ contient une erreur : Password is required.</status>
+</kw>
+<var name="${error}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4fe553002f78abb7081493861e1b7be9", element="f.F75FCEB3CAEEB232C455B662D6947349.d.39F96F10AE05516ECCB2FFD135C79558.e.55")&gt;</var>
+<status status="FAIL" start="2025-06-02T14:51:40.520134" elapsed="0.016557">Le champ contient une erreur : Password is required.</status>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="FAIL" start="2025-06-02T14:51:40.519910" elapsed="0.016894">Le champ contient une erreur : Password is required.</status>
+</for>
+<status status="FAIL" start="2025-06-02T14:51:40.488386" elapsed="0.048567">Le champ contient une erreur : Password is required.</status>
+</kw>
+<arg>gender=M</arg>
+<arg>firstName=John</arg>
+<arg>lastName=Doe</arg>
+<arg>email=helloTest10@example.com</arg>
+<arg>password=</arg>
+<arg>confirmPassword=</arg>
+<status status="FAIL" start="2025-06-02T14:51:39.740682" elapsed="0.796385">Le champ contient une erreur : Password is required.</status>
+</kw>
+<doc>Missing password</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="FAIL" start="2025-06-02T14:51:33.385157" elapsed="7.152102">Le champ contient une erreur : Password is required.</status>
+</test>
+<test id="s1-t13" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:40.539754" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:51:40.539493" elapsed="6.660412"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:51:47.200219" elapsed="0.070938"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:40.539138" elapsed="6.732299"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:47.273554" elapsed="0.000116"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:51:47.273217" elapsed="0.000532"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:47.274202" level="INFO">Clicking element 'id=gender-female'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:47.273959" elapsed="0.206217"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:47.273817" elapsed="0.207237"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:51:47.273188" elapsed="0.208081"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:51:47.272889" elapsed="0.208585"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:47.485215" level="INFO">Typing text 'Jane' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:47.484259" elapsed="0.166820"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:51:47.481888" elapsed="0.169422"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:47.652619" level="INFO">Typing text 'Smith' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:47.652181" elapsed="0.111072"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:51:47.651549" elapsed="0.111970"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:47.765062" level="INFO">Typing text 'helloTest11@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:47.764483" elapsed="0.170549"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:51:47.763823" elapsed="0.171490"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:47.936540" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:51:47.978941" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:47.936112" elapsed="0.120034"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:51:47.935556" elapsed="0.120924"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:48.057943" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:51:48.108075" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:48.057482" elapsed="0.149653"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:48.056824" elapsed="0.150647"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:47.272332" elapsed="0.935293"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:48.208809" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:48.208495" elapsed="0.164448"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:48.207997" elapsed="0.165292"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:48.394009" level="INFO">@{errors} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="52c312cd7304b51f4eef6bb004109dd9", element="f.2DE4924CF563DE695A6045652F402E80.d.31DFCCCA75C9F247C6F96143B0E3C4D8.e.55")&gt; ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:48.374348" elapsed="0.019905"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:48.414563" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:48.395139" elapsed="0.019676"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:51:48.415195" elapsed="0.000517"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:48.442521" level="INFO">${text} = The password should have at least 6 characters.</msg>
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:48.418252" elapsed="0.024514"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-02T14:51:48.443733" level="INFO">Erreur détectée : The password should have at least 6 characters.</msg>
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-02T14:51:48.443133" elapsed="0.000817"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-06-02T14:51:48.444717" level="INFO">Length is 47.</msg>
+<msg time="2025-06-02T14:51:48.444987" level="FAIL">Le champ contient une erreur : The password should have at least 6 characters.</msg>
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="FAIL" start="2025-06-02T14:51:48.444247" elapsed="0.000965">Le champ contient une erreur : The password should have at least 6 characters.</status>
+</kw>
+<var name="${error}">&lt;selenium.webdriver.remote.webelement.WebElement (session="52c312cd7304b51f4eef6bb004109dd9", element="f.2DE4924CF563DE695A6045652F402E80.d.31DFCCCA75C9F247C6F96143B0E3C4D8.e.55")&gt;</var>
+<status status="FAIL" start="2025-06-02T14:51:48.416509" elapsed="0.028902">Le champ contient une erreur : The password should have at least 6 characters.</status>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="FAIL" start="2025-06-02T14:51:48.416036" elapsed="0.029582">Le champ contient une erreur : The password should have at least 6 characters.</status>
+</for>
+<status status="FAIL" start="2025-06-02T14:51:48.373768" elapsed="0.072146">Le champ contient une erreur : The password should have at least 6 characters.</status>
+</kw>
+<arg>gender=F</arg>
+<arg>firstName=Jane</arg>
+<arg>lastName=Smith</arg>
+<arg>email=helloTest11@example.com</arg>
+<arg>password=pass</arg>
+<arg>confirmPassword=pass</arg>
+<status status="FAIL" start="2025-06-02T14:51:47.271748" elapsed="1.174439">Le champ contient une erreur : The password should have at least 6 characters.</status>
+</kw>
+<doc>Password too short</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="FAIL" start="2025-06-02T14:51:40.537684" elapsed="7.908933">Le champ contient une erreur : The password should have at least 6 characters.</status>
+</test>
+<test id="s1-t14" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:48.452501" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:51:48.451946" elapsed="5.274508"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:51:53.726880" elapsed="0.065806"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:48.450105" elapsed="5.343049"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:53.797385" level="INFO">Clicking element 'id=gender-male'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:53.796943" elapsed="0.108908"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:53.796455" elapsed="0.109682"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:51:53.906698" elapsed="0.000176"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:51:53.906305" elapsed="0.000708"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:51:53.796405" elapsed="0.110711"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:51:53.795913" elapsed="0.111351"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:53.909325" level="INFO">Typing text 'John' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:53.908653" elapsed="0.121435"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:51:53.907624" elapsed="0.122696"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:54.031275" level="INFO">Typing text 'Doe' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.030948" elapsed="0.100009"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:51:54.030549" elapsed="0.100791"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:54.132675" level="INFO">Typing text 'helloTest12@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.132273" elapsed="0.128394"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:51:54.131677" elapsed="0.129325"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:54.262536" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:51:54.299445" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.262010" elapsed="0.097395"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:51:54.261333" elapsed="0.098264"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:54.360422" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:51:54.390936" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.360152" elapsed="0.096537"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:54.359793" elapsed="0.097109"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:51:53.794860" elapsed="0.662148"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:54.458126" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.457647" elapsed="0.101643"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:54.457255" elapsed="0.102276"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:54.576658" level="INFO">@{errors} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="545568b343e897f7a44fcdabcef662db", element="f.1098F730F8F50767D2DF437831817872.d.87445A0005C7773C4E2863B70E0EBBF1.e.55")&gt; ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.560205" elapsed="0.016699"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:54.590864" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.577262" elapsed="0.013752"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.591242" elapsed="0.000297"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:54.606855" level="INFO">${text} = The password and confirmation password do not match.</msg>
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.592031" elapsed="0.014979"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-02T14:51:54.607484" level="INFO">Erreur détectée : The password and confirmation password do not match.</msg>
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.607226" elapsed="0.000384"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-06-02T14:51:54.608109" level="INFO">Length is 52.</msg>
+<msg time="2025-06-02T14:51:54.608250" level="FAIL">Le champ contient une erreur : The password and confirmation password do not match.</msg>
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="FAIL" start="2025-06-02T14:51:54.607807" elapsed="0.000554">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</kw>
+<var name="${error}">&lt;selenium.webdriver.remote.webelement.WebElement (session="545568b343e897f7a44fcdabcef662db", element="f.1098F730F8F50767D2DF437831817872.d.87445A0005C7773C4E2863B70E0EBBF1.e.55")&gt;</var>
+<status status="FAIL" start="2025-06-02T14:51:54.591867" elapsed="0.016636">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="FAIL" start="2025-06-02T14:51:54.591652" elapsed="0.017198">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</for>
+<status status="FAIL" start="2025-06-02T14:51:54.559831" elapsed="0.049295">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</kw>
+<arg>gender=M</arg>
+<arg>firstName=John</arg>
+<arg>lastName=Doe</arg>
+<arg>email=helloTest12@example.com</arg>
+<arg>password=Password123</arg>
+<arg>confirmPassword=Password456</arg>
+<status status="FAIL" start="2025-06-02T14:51:53.793822" elapsed="0.815479">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</kw>
+<doc>Passwords do not match</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="FAIL" start="2025-06-02T14:51:48.447467" elapsed="6.162097">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</test>
+<test id="s1-t15" name="The User Enters Register Credentials" line="14">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:51:54.612441" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-02T14:51:54.612014" elapsed="6.563411"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-02T14:52:01.175865" elapsed="0.078716"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:51:54.611552" elapsed="6.643385"/>
+</kw>
+<kw name="user registers with data">
+<kw name="Given Fill Registration Form" owner="Register">
+<kw name="Fill Gender" owner="Register">
+<if>
+<branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${GENDER_RADIO_LOCATOR_M}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-02T14:52:01.257808" elapsed="0.000129"/>
+</kw>
+<status status="NOT RUN" start="2025-06-02T14:52:01.257422" elapsed="0.000609"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:52:01.258669" level="INFO">Clicking element 'id=gender-female'.</msg>
+<arg>${GENDER_RADIO_LOCATOR_F}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:52:01.258295" elapsed="0.165349"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:52:01.258112" elapsed="0.165720"/>
+</branch>
+<status status="PASS" start="2025-06-02T14:52:01.257388" elapsed="0.166528"/>
+</if>
+<arg>${gender}</arg>
+<status status="PASS" start="2025-06-02T14:52:01.256947" elapsed="0.167049"/>
+</kw>
+<kw name="Fill FirstName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:52:01.424972" level="INFO">Typing text 'Jane' into text field 'id=FirstName'.</msg>
+<arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:52:01.424677" elapsed="0.124755"/>
+</kw>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-06-02T14:52:01.424240" elapsed="0.125407"/>
+</kw>
+<kw name="Fill LastName" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:52:01.550565" level="INFO">Typing text 'Smith' into text field 'id=LastName'.</msg>
+<arg>${LAST_NAME_INPUT_LOCATOR}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:52:01.550276" elapsed="0.081675"/>
+</kw>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-06-02T14:52:01.549867" elapsed="0.082287"/>
+</kw>
+<kw name="Fill Email" owner="Register">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:52:01.633026" level="INFO">Typing text 'helloTest13@example.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_INPUT_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:52:01.632754" elapsed="0.127524"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-02T14:52:01.632365" elapsed="0.128128"/>
+</kw>
+<kw name="Fill Password" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:52:01.761531" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T14:52:01.794422" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:52:01.761239" elapsed="0.093291"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-06-02T14:52:01.760754" elapsed="0.093980"/>
+</kw>
+<kw name="Fill ConfirmPassword" owner="Register">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:52:01.855566" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T14:52:01.888946" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
+<arg>${confirmPassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:52:01.855300" elapsed="0.095496"/>
+</kw>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:52:01.854939" elapsed="0.096079"/>
+</kw>
+<arg>${gender}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<arg>${confirmPassword}</arg>
+<status status="PASS" start="2025-06-02T14:52:01.256036" elapsed="0.695077"/>
+</kw>
+<kw name="When user submits the registration form" owner="Register">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:52:01.951932" level="INFO">Clicking element 'id=register-button'.</msg>
+<arg>${REGISTER_BUTTON_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:52:01.951688" elapsed="0.082789"/>
+</kw>
+<status status="PASS" start="2025-06-02T14:52:01.951360" elapsed="0.083340"/>
+</kw>
+<kw name="And generated error messages" owner="Register">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:52:02.048043" level="INFO">@{errors} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="4da346d06bff840dcddfda79aca49986", element="f.9598C709E8FE50AAE0DA757D8EC8CF03.d.04AE941BBA973AB58E005DBF06927F85.e.52")&gt; ]</msg>
+<var>@{errors}</var>
+<arg>${ERRORS_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:52:02.035372" elapsed="0.012831"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:52:02.060369" level="INFO">@{global_error} = [ ]</msg>
+<var>@{global_error}</var>
+<arg>${GLOBAL_ERROR_LOCATOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:52:02.048397" elapsed="0.012129"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${errors}</arg>
+<arg>@{global_error}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-06-02T14:52:02.060834" elapsed="0.000360"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-06-02T14:52:02.075155" level="INFO">${text} = The password and confirmation password do not match.</msg>
+<var>${text}</var>
+<arg>${error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-02T14:52:02.061748" elapsed="0.013540"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-02T14:52:02.076149" level="INFO">Erreur détectée : The password and confirmation password do not match.</msg>
+<arg>Erreur détectée : ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-02T14:52:02.075672" elapsed="0.000656"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-06-02T14:52:02.076940" level="INFO">Length is 52.</msg>
+<msg time="2025-06-02T14:52:02.077147" level="FAIL">Le champ contient une erreur : The password and confirmation password do not match.</msg>
+<arg>${text}</arg>
+<arg>Le champ contient une erreur : ${text}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="FAIL" start="2025-06-02T14:52:02.076588" elapsed="0.000720">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</kw>
+<var name="${error}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4da346d06bff840dcddfda79aca49986", element="f.9598C709E8FE50AAE0DA757D8EC8CF03.d.04AE941BBA973AB58E005DBF06927F85.e.52")&gt;</var>
+<status status="FAIL" start="2025-06-02T14:52:02.061587" elapsed="0.015882">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</iter>
+<var>${error}</var>
+<value>@{errors}</value>
+<status status="FAIL" start="2025-06-02T14:52:02.061343" elapsed="0.016286">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</for>
+<status status="FAIL" start="2025-06-02T14:52:02.034997" elapsed="0.042845">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</kw>
+<arg>gender=F</arg>
+<arg>firstName=Jane</arg>
+<arg>lastName=Smith</arg>
+<arg>email=helloTest13@example.com</arg>
+<arg>password=Password456</arg>
+<arg>confirmPassword=Password123</arg>
+<status status="FAIL" start="2025-06-02T14:52:01.255277" elapsed="0.822720">Le champ contient une erreur : The password and confirmation password do not match.</status>
+</kw>
+<doc>Passwords do not match</doc>
+<tag>Invalid</tag>
+<tag>register</tag>
+<tag>user</tag>
+<status status="FAIL" start="2025-06-02T14:51:54.610072" elapsed="7.468238">Le champ contient une erreur : The password and confirmation password do not match.</status>
 </test>
 <kw name="End Web Test" owner="Common" type="TEARDOWN">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-28T16:19:27.744836" level="INFO">Slept 1 second.</msg>
+<msg time="2025-06-02T14:52:03.080126" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-28T16:19:26.744036" elapsed="1.001019"/>
+<status status="PASS" start="2025-06-02T14:52:02.079392" elapsed="1.001138"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-28T16:19:27.745232" elapsed="2.289270"/>
+<status status="PASS" start="2025-06-02T14:52:03.080897" elapsed="3.120569"/>
 </kw>
-<status status="PASS" start="2025-05-28T16:19:26.743839" elapsed="3.290958"/>
+<status status="PASS" start="2025-06-02T14:52:02.079126" elapsed="4.122643"/>
 </kw>
 <doc>Cest une description du test page en general</doc>
-<status status="FAIL" start="2025-05-28T16:19:19.749381" elapsed="10.285533"/>
+<status status="FAIL" start="2025-06-02T14:50:25.516588" elapsed="100.685295"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="6" fail="9" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">smoke</stat>
+<stat pass="4" fail="8" skip="0">Invalid</stat>
+<stat pass="6" fail="9" skip="0">register</stat>
+<stat pass="6" fail="9" skip="0">user</stat>
+<stat pass="2" fail="1" skip="0">Valid</stat>
 </tag>
 <suite>
-<stat name="Main" id="s1" pass="0" fail="1" skip="0">Main</stat>
+<stat name="Register" id="s1" pass="6" fail="9" skip="0">Register</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-05-28T16:19:20.133463" level="WARN">Error in file 'C:\Users\aechbera\PycharmProjects\dev\robot\Demo Web Shop\Resources\PageObjects\Product.robot' on line 34: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-06-02T14:50:31.192132" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:50:37.260415" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:50:42.781869" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:50:48.964361" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:50:55.247425" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:51:01.147081" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:51:07.913413" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:51:13.594521" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:51:20.818687" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:51:26.615776" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:51:33.385274" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:51:40.537746" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:51:48.447571" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
+<msg time="2025-06-02T14:51:54.610138" level="WARN">Multiple tests with name 'The User Enters Register Credentials' executed in suite 'Register'.</msg>
 </errors>
 </robot>

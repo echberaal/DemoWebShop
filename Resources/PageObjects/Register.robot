@@ -1,5 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library    Collections
 
 *** Variables ***
 ${PAGE_TITLE_LOCATOR}     class=page-title
@@ -14,6 +15,10 @@ ${PASSWORD_INPUT_LOCATOR}       id=Password
 ${CONFIRM_PASSWORD_INPUT_LOCATOR}       id=ConfirmPassword
 ${REGISTER_BUTTON_LOCATOR}       id=register-button
 ${REGISTER_SUCCESS_MSG}       class=result
+
+
+${ERRORS_LOCATOR}        //span[contains(@class, 'field-validation-error')]//span
+${GLOBAL_ERROR_LOCATOR}          xpath=//div[contains(@class, 'validation-summary-errors')]//li
 *** Keywords ***
 check if we are in the registration page
     Wait Until Page Contains Element    ${PAGE_TITLE_LOCATOR}
@@ -60,6 +65,18 @@ Fill Password
 Fill ConfirmPassword
     [Arguments]    ${confirmPassword}
     Input Password    ${CONFIRM_PASSWORD_INPUT_LOCATOR}     ${confirmPassword}
+
+generated error messages
+    @{errors}=    Get WebElements    ${ERRORS_LOCATOR}
+    @{global_error}=     Get WebElements    ${GLOBAL_ERROR_LOCATOR}
+    Append To List  ${errors}       @{global_error}
+
+    FOR    ${error}    IN    @{errors}
+        ${text}=    Get Text    ${error}
+        Log    Detected Error : ${text}
+        Should Be Empty          ${text}       Input Error : ${text}
+    END
+
 
 
 

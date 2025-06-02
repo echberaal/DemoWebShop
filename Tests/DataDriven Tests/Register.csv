@@ -1,0 +1,16 @@
+*** Test Cases ***;${gender};${firstName};${lastName};${email};${password};${confirmPassword};[Tags];[Documentation]
+The User Enters Register Credentials;M;John;Doe;helloTest1@example.com;Password123;Password123;Valid;Valid male user with matching passwords
+The User Enters Register Credentials;F;Jane;Smith;helloTest2@example.com;Password456;Password456;Valid;Valid female user with matching passwords
+The User Enters Register Credentials;F;Jane;Smith;helloTest2@example.com;Password456;Password456;Valid;Same Email
+The User Enters Register Credentials;;John;Doe;helloTest3@example.com;Password123;Password123;Invalid;Missing gender
+The User Enters Register Credentials;X;Jane;Smith;helloTest4@example.com;Password456;Password456;Invalid;Invalid gender value
+The User Enters Register Credentials;M;;Doe;helloTest5@example.com;Password123;Password123;Invalid;Missing first name
+The User Enters Register Credentials;F;J;Smith;helloTest6@example.com;Password456;Password456;Invalid;First name too short
+The User Enters Register Credentials;M;John;;helloTest7@example.com;Password123;Password123;Invalid;Missing last name
+The User Enters Register Credentials;F;Jane;S;helloTest8@example.com;Password456;Password456;Invalid;Last name too short
+The User Enters Register Credentials;M;John;Doe;;Password123;Password123;Invalid;Missing email
+The User Enters Register Credentials;F;Jane;Smith;helloTest9@com;Password456;Password456;Invalid;Invalid email format
+The User Enters Register Credentials;M;John;Doe;helloTest10@example.com;;;Invalid;Missing password
+The User Enters Register Credentials;F;Jane;Smith;helloTest11@example.com;pass;pass;Invalid;Password too short
+The User Enters Register Credentials;M;John;Doe;helloTest12@example.com;Password123;Password456;Invalid;Passwords do not match
+The User Enters Register Credentials;F;Jane;Smith;helloTest13@example.com;Password456;Password123;Invalid;Passwords do not match
