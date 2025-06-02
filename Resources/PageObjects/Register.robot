@@ -3,7 +3,6 @@ Library     SeleniumLibrary
 Library    Collections
 
 *** Variables ***
-${PAGE_TITLE_LOCATOR}     class=page-title
 ${REGISTER_NAVBAR_BUTTON_LOCATOR}   class=ico-register
 ${LOGOUT_REGISTERED_USER_LOCATOR}   class=ico-logout
 ${GENDER_RADIO_LOCATOR_M}         id=gender-male

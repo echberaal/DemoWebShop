@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-02T16:35:42.173406" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-02T17:04:42.838637" rpa="false" schemaversion="5">
 <suite id="s1" name="Main" source="C:\Users\aechbera\PycharmProjects\dev\robot\Demo Web Shop\Tests\Main.robot">
 <kw name="Begin Web Test" owner="Common" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:42.570537" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/'.</msg>
+<msg time="2025-06-02T17:04:43.217297" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-02T16:35:42.570272" elapsed="3.348799"/>
+<status status="PASS" start="2025-06-02T17:04:43.217031" elapsed="3.845701"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-02T16:35:45.919419" elapsed="0.032673"/>
+<status status="PASS" start="2025-06-02T17:04:47.063256" elapsed="0.033196"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:42.569636" elapsed="3.382656"/>
+<status status="PASS" start="2025-06-02T17:04:43.216454" elapsed="3.880369"/>
 </kw>
 <test id="s1-t1" name="User registers logs out then logs in" line="13">
 <kw name="Given user is on the registration page" owner="App">
 <kw name="Given navbar should be visible" owner="Navbar">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:45.993158" level="INFO">Element 'class=header-links' is displayed.</msg>
+<msg time="2025-06-02T17:04:47.134846" level="INFO">Element 'class=header-links' is displayed.</msg>
 <arg>${NAVBAR_LOCATOR}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-02T16:35:45.954761" elapsed="0.038627"/>
+<status status="PASS" start="2025-06-02T17:04:47.098699" elapsed="0.036451"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:45.954253" elapsed="0.039254"/>
+<status status="PASS" start="2025-06-02T17:04:47.098269" elapsed="0.037071"/>
 </kw>
 <kw name="When user clicks register" owner="Navbar">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:45.994431" level="INFO">Clicking element 'class=ico-register'.</msg>
+<msg time="2025-06-02T17:04:47.136441" level="INFO">Clicking element 'class=ico-register'.</msg>
 <arg>${REGISTER_NAVBAR_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:45.994088" elapsed="0.437734"/>
+<status status="PASS" start="2025-06-02T17:04:47.136088" elapsed="0.408564"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:45.993720" elapsed="0.438281"/>
+<status status="PASS" start="2025-06-02T17:04:47.135638" elapsed="0.409157"/>
 </kw>
 <kw name="Then verify page title" owner="Common">
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${PAGE_TITLE_LOCATOR}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.432626" elapsed="0.015321"/>
+<status status="PASS" start="2025-06-02T17:04:47.545304" elapsed="0.012759"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:46.465055" level="INFO">${PAGE_TITLE_VALUE} = Register</msg>
+<msg time="2025-06-02T17:04:47.575428" level="INFO">${PAGE_TITLE_VALUE} = Register</msg>
 <var>${PAGE_TITLE_VALUE}</var>
 <arg>${PAGE_TITLE_LOCATOR}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.448174" elapsed="0.017048"/>
+<status status="PASS" start="2025-06-02T17:04:47.558290" elapsed="0.017309"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${PAGE_TITLE_VALUE}</arg>
 <arg>${page_title}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.465454" elapsed="0.000271"/>
+<status status="PASS" start="2025-06-02T17:04:47.575822" elapsed="0.000286"/>
 </kw>
 <arg>Register</arg>
-<status status="PASS" start="2025-06-02T16:35:46.432227" elapsed="0.033585"/>
+<status status="PASS" start="2025-06-02T17:04:47.544981" elapsed="0.031261"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:45.953492" elapsed="0.512389"/>
+<status status="PASS" start="2025-06-02T17:04:47.097827" elapsed="0.478516"/>
 </kw>
 <kw name="When user registers with valid data" owner="App">
 <kw name="Given user fills the registration form" owner="Register">
@@ -66,82 +66,82 @@
 <if>
 <branch type="IF" condition="&quot;${gender}&quot; == &quot;M&quot;">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:46.467466" level="INFO">Clicking element 'id=gender-male'.</msg>
+<msg time="2025-06-02T17:04:47.577981" level="INFO">Clicking element 'id=gender-male'.</msg>
 <arg>${GENDER_RADIO_LOCATOR_M}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.467289" elapsed="0.053469"/>
+<status status="PASS" start="2025-06-02T17:04:47.577804" elapsed="0.053046"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:46.467058" elapsed="0.053854"/>
+<status status="PASS" start="2025-06-02T17:04:47.577573" elapsed="0.053501"/>
 </branch>
 <branch type="ELSE">
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${GENDER_RADIO_LOCATOR_F}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-06-02T16:35:46.521257" elapsed="0.000106"/>
+<status status="NOT RUN" start="2025-06-02T17:04:47.631561" elapsed="0.000093"/>
 </kw>
-<status status="NOT RUN" start="2025-06-02T16:35:46.521005" elapsed="0.000421"/>
+<status status="NOT RUN" start="2025-06-02T17:04:47.631170" elapsed="0.000545"/>
 </branch>
-<status status="PASS" start="2025-06-02T16:35:46.467029" elapsed="0.054446"/>
+<status status="PASS" start="2025-06-02T17:04:47.577546" elapsed="0.054221"/>
 </if>
 <arg>${gender}</arg>
-<status status="PASS" start="2025-06-02T16:35:46.466844" elapsed="0.054695"/>
+<status status="PASS" start="2025-06-02T17:04:47.577351" elapsed="0.054477"/>
 </kw>
 <kw name="Fill FirstName" owner="Register">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:46.522283" level="INFO">Typing text 'John' into text field 'id=FirstName'.</msg>
+<msg time="2025-06-02T17:04:47.632610" level="INFO">Typing text 'John' into text field 'id=FirstName'.</msg>
 <arg>${FIRST_NAME_INPUT_LOCATOR}</arg>
 <arg>${firstName}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.522001" elapsed="0.080850"/>
+<status status="PASS" start="2025-06-02T17:04:47.632379" elapsed="0.070821"/>
 </kw>
 <arg>${firstName}</arg>
-<status status="PASS" start="2025-06-02T16:35:46.521699" elapsed="0.081383"/>
+<status status="PASS" start="2025-06-02T17:04:47.631986" elapsed="0.071611"/>
 </kw>
 <kw name="Fill LastName" owner="Register">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:46.604234" level="INFO">Typing text 'Doe' into text field 'id=LastName'.</msg>
+<msg time="2025-06-02T17:04:47.705053" level="INFO">Typing text 'Doe' into text field 'id=LastName'.</msg>
 <arg>${LAST_NAME_INPUT_LOCATOR}</arg>
 <arg>${lastName}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.603859" elapsed="0.064289"/>
+<status status="PASS" start="2025-06-02T17:04:47.704754" elapsed="0.059774"/>
 </kw>
 <arg>${lastName}</arg>
-<status status="PASS" start="2025-06-02T16:35:46.603359" elapsed="0.064948"/>
+<status status="PASS" start="2025-06-02T17:04:47.704103" elapsed="0.060596"/>
 </kw>
 <kw name="Fill Email" owner="Register">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:46.669062" level="INFO">Typing text 'john.doe1235@e3xample.com' into text field 'id=Email'.</msg>
+<msg time="2025-06-02T17:04:47.765417" level="INFO">Typing text 'john.doe99@e3xample.com' into text field 'id=Email'.</msg>
 <arg>${EMAIL_INPUT_LOCATOR}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.668836" elapsed="0.080263"/>
+<status status="PASS" start="2025-06-02T17:04:47.765209" elapsed="0.078528"/>
 </kw>
 <arg>${email}</arg>
-<status status="PASS" start="2025-06-02T16:35:46.668497" elapsed="0.080826"/>
+<status status="PASS" start="2025-06-02T17:04:47.764898" elapsed="0.079083"/>
 </kw>
 <kw name="Fill Password" owner="Register">
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:46.750239" level="INFO">Typing password into text field 'id=Password'.</msg>
-<msg time="2025-06-02T16:35:46.775971" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-06-02T17:04:47.844997" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T17:04:47.867471" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD_INPUT_LOCATOR}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.749978" elapsed="0.065946"/>
+<status status="PASS" start="2025-06-02T17:04:47.844742" elapsed="0.058353"/>
 </kw>
 <arg>${password}</arg>
-<status status="PASS" start="2025-06-02T16:35:46.749517" elapsed="0.066566"/>
+<status status="PASS" start="2025-06-02T17:04:47.844269" elapsed="0.059060"/>
 </kw>
 <kw name="Fill ConfirmPassword" owner="Register">
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:46.816831" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
-<msg time="2025-06-02T16:35:46.843058" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-06-02T17:04:47.904184" level="INFO">Typing password into text field 'id=ConfirmPassword'.</msg>
+<msg time="2025-06-02T17:04:47.928457" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${CONFIRM_PASSWORD_INPUT_LOCATOR}</arg>
 <arg>${confirmPassword}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.816619" elapsed="0.064518"/>
+<status status="PASS" start="2025-06-02T17:04:47.903958" elapsed="0.060223"/>
 </kw>
 <arg>${confirmPassword}</arg>
-<status status="PASS" start="2025-06-02T16:35:46.816247" elapsed="0.065053"/>
+<status status="PASS" start="2025-06-02T17:04:47.903595" elapsed="0.060744"/>
 </kw>
 <arg>M</arg>
 <arg>John</arg>
@@ -149,451 +149,451 @@
 <arg>${email}</arg>
 <arg>Password123</arg>
 <arg>Password123</arg>
-<status status="PASS" start="2025-06-02T16:35:46.466508" elapsed="0.414862"/>
+<status status="PASS" start="2025-06-02T17:04:47.577005" elapsed="0.387409"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:46.466300" elapsed="0.415152"/>
+<status status="PASS" start="2025-06-02T17:04:47.576805" elapsed="0.387686"/>
 </kw>
 <kw name="When user submits the registration form" owner="Register">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:46.882181" level="INFO">Clicking element 'id=register-button'.</msg>
+<msg time="2025-06-02T17:04:47.965111" level="INFO">Clicking element 'id=register-button'.</msg>
 <arg>${REGISTER_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.881941" elapsed="0.053916"/>
+<status status="PASS" start="2025-06-02T17:04:47.964923" elapsed="0.054131"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:46.881621" elapsed="0.054387"/>
+<status status="PASS" start="2025-06-02T17:04:47.964661" elapsed="0.054567"/>
 </kw>
 <kw name="Then a success message appears" owner="Register">
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${REGISTER_SUCCESS_MSG}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-02T16:35:46.937023" elapsed="1.073668"/>
+<status status="PASS" start="2025-06-02T17:04:48.020436" elapsed="0.917590"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:48.025614" level="INFO">${REGISTER_SUCCESS_VALUE} = Your registration completed</msg>
+<msg time="2025-06-02T17:04:48.961683" level="INFO">${REGISTER_SUCCESS_VALUE} = Your registration completed</msg>
 <var>${REGISTER_SUCCESS_VALUE}</var>
 <arg>${REGISTER_SUCCESS_MSG}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:48.010900" elapsed="0.014839"/>
+<status status="PASS" start="2025-06-02T17:04:48.938767" elapsed="0.023041"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${REGISTER_SUCCESS_VALUE}</arg>
 <arg>Your registration completed</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-06-02T16:35:48.025912" elapsed="0.000241"/>
+<status status="PASS" start="2025-06-02T17:04:48.961984" elapsed="0.000247"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:46.936651" elapsed="1.089586"/>
+<status status="PASS" start="2025-06-02T17:04:48.019879" elapsed="0.942435"/>
 </kw>
 <tag>register</tag>
-<status status="PASS" start="2025-06-02T16:35:46.466056" elapsed="1.560243"/>
+<status status="PASS" start="2025-06-02T17:04:47.576554" elapsed="1.385825"/>
 </kw>
 <kw name="And user logs out" owner="App">
 <kw name="Given navbar should be visible" owner="Navbar">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:48.037766" level="INFO">Element 'class=header-links' is displayed.</msg>
+<msg time="2025-06-02T17:04:48.976206" level="INFO">Element 'class=header-links' is displayed.</msg>
 <arg>${NAVBAR_LOCATOR}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-02T16:35:48.026885" elapsed="0.011049"/>
+<status status="PASS" start="2025-06-02T17:04:48.962963" elapsed="0.013421"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:48.026704" elapsed="0.011350"/>
+<status status="PASS" start="2025-06-02T17:04:48.962778" elapsed="0.013708"/>
 </kw>
 <kw name="When user clicks logout" owner="Navbar">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:48.038678" level="INFO">Clicking element 'class=ico-logout'.</msg>
+<msg time="2025-06-02T17:04:48.977100" level="INFO">Clicking element 'class=ico-logout'.</msg>
 <arg>${LOGOUT_NAVBAR_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:48.038495" elapsed="0.623368"/>
+<status status="PASS" start="2025-06-02T17:04:48.976918" elapsed="0.723840"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:48.038235" elapsed="0.623778"/>
+<status status="PASS" start="2025-06-02T17:04:48.976661" elapsed="0.724289"/>
 </kw>
 <tag>logout</tag>
-<status status="PASS" start="2025-06-02T16:35:48.026476" elapsed="0.635603"/>
+<status status="PASS" start="2025-06-02T17:04:48.962551" elapsed="0.738470"/>
 </kw>
 <kw name="Then user logs in with valid data" owner="App">
 <kw name="Given user is on the login page" owner="App">
 <kw name="Given navbar should be visible" owner="Navbar">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:48.687372" level="INFO">Element 'class=header-links' is displayed.</msg>
+<msg time="2025-06-02T17:04:49.728245" level="INFO">Element 'class=header-links' is displayed.</msg>
 <arg>${NAVBAR_LOCATOR}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-02T16:35:48.663042" elapsed="0.024525"/>
+<status status="PASS" start="2025-06-02T17:04:49.701877" elapsed="0.026574"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:48.662858" elapsed="0.024818"/>
+<status status="PASS" start="2025-06-02T17:04:49.701705" elapsed="0.026855"/>
 </kw>
 <kw name="When user clicks login" owner="Navbar">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:48.688336" level="INFO">Clicking element 'class=ico-login'.</msg>
+<msg time="2025-06-02T17:04:49.729376" level="INFO">Clicking element 'class=ico-login'.</msg>
 <arg>${LOGIN_NAVBAR_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:48.688136" elapsed="0.313817"/>
+<status status="PASS" start="2025-06-02T17:04:49.729149" elapsed="0.335882"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:48.687863" elapsed="0.314248"/>
+<status status="PASS" start="2025-06-02T17:04:49.728775" elapsed="0.336421"/>
 </kw>
 <kw name="Then verify page title" owner="Common">
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${PAGE_TITLE_LOCATOR}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.002550" elapsed="0.008211"/>
+<status status="PASS" start="2025-06-02T17:04:50.065682" elapsed="0.006130"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:49.026114" level="INFO">${PAGE_TITLE_VALUE} = Welcome, Please Sign In!</msg>
+<msg time="2025-06-02T17:04:50.088740" level="INFO">${PAGE_TITLE_VALUE} = Welcome, Please Sign In!</msg>
 <var>${PAGE_TITLE_VALUE}</var>
 <arg>${PAGE_TITLE_LOCATOR}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.011118" elapsed="0.015126"/>
+<status status="PASS" start="2025-06-02T17:04:50.072026" elapsed="0.016832"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${PAGE_TITLE_VALUE}</arg>
 <arg>${page_title}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.026511" elapsed="0.000681"/>
+<status status="PASS" start="2025-06-02T17:04:50.089028" elapsed="0.000209"/>
 </kw>
 <arg>Sign In</arg>
-<status status="PASS" start="2025-06-02T16:35:49.002289" elapsed="0.025048"/>
+<status status="PASS" start="2025-06-02T17:04:50.065385" elapsed="0.023932"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:48.662650" elapsed="0.364805"/>
+<status status="PASS" start="2025-06-02T17:04:49.701521" elapsed="0.387858"/>
 </kw>
 <kw name="When user fills the login form" owner="Login">
 <kw name="Fill Log In Form" owner="Login">
 <kw name="Fill Email" owner="Login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:49.029059" level="INFO">Typing text 'john.doe1235@e3xample.com' into text field 'id=Email'.</msg>
+<msg time="2025-06-02T17:04:50.090425" level="INFO">Typing text 'john.doe99@e3xample.com' into text field 'id=Email'.</msg>
 <arg>${EMAIL_INPUT_LOCATOR}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.028716" elapsed="0.057392"/>
+<status status="PASS" start="2025-06-02T17:04:50.090175" elapsed="0.059357"/>
 </kw>
 <arg>${email}</arg>
-<status status="PASS" start="2025-06-02T16:35:49.028278" elapsed="0.058024"/>
+<status status="PASS" start="2025-06-02T17:04:50.089969" elapsed="0.059944"/>
 </kw>
 <kw name="Fill Password" owner="Login">
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:49.087116" level="INFO">Typing password into text field 'id=Password'.</msg>
-<msg time="2025-06-02T16:35:49.109402" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-06-02T17:04:50.151044" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T17:04:50.170804" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD_INPUT_LOCATOR}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.086911" elapsed="0.062345"/>
+<status status="PASS" start="2025-06-02T17:04:50.150735" elapsed="0.060529"/>
 </kw>
 <arg>${password}</arg>
-<status status="PASS" start="2025-06-02T16:35:49.086581" elapsed="0.062952"/>
+<status status="PASS" start="2025-06-02T17:04:50.150247" elapsed="0.061211"/>
 </kw>
 <arg>${email}</arg>
 <arg>Password123</arg>
-<status status="PASS" start="2025-06-02T16:35:49.027904" elapsed="0.121753"/>
+<status status="PASS" start="2025-06-02T17:04:50.089739" elapsed="0.121794"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:49.027634" elapsed="0.122112"/>
+<status status="PASS" start="2025-06-02T17:04:50.089519" elapsed="0.122078"/>
 </kw>
 <kw name="And user submits the login form" owner="Login">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:49.150386" level="INFO">Clicking element 'xpath=/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input'.</msg>
+<msg time="2025-06-02T17:04:50.212242" level="INFO">Clicking element 'xpath=/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input'.</msg>
 <arg>${LOGIN_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.150190" elapsed="0.493273"/>
+<status status="PASS" start="2025-06-02T17:04:50.212051" elapsed="0.052633"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:49.149927" elapsed="0.493718"/>
+<status status="PASS" start="2025-06-02T17:04:50.211776" elapsed="0.053080"/>
 </kw>
 <kw name="Then user account should be visible in navbar" owner="Navbar">
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${ACCOUNT_NAVBAR_LOCATOR}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.644462" elapsed="0.069967"/>
+<status status="PASS" start="2025-06-02T17:04:50.265332" elapsed="0.007712"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:49.742100" level="INFO">${ACCOUNT_NAVBAR_VALUE} = john.doe1235@e3xample.com</msg>
+<msg time="2025-06-02T17:04:50.791518" level="INFO">${ACCOUNT_NAVBAR_VALUE} = john.doe99@e3xample.com</msg>
 <var>${ACCOUNT_NAVBAR_VALUE}</var>
 <arg>${ACCOUNT_NAVBAR_LOCATOR}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.714777" elapsed="0.027444"/>
+<status status="PASS" start="2025-06-02T17:04:50.273266" elapsed="0.518413"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${ACCOUNT_NAVBAR_VALUE}</arg>
 <arg>${email}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.742389" elapsed="0.000240"/>
+<status status="PASS" start="2025-06-02T17:04:50.791937" elapsed="0.000415"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:49.643914" elapsed="0.098799"/>
+<status status="PASS" start="2025-06-02T17:04:50.265047" elapsed="0.527474"/>
 </kw>
 <tag>login</tag>
-<status status="PASS" start="2025-06-02T16:35:48.662295" elapsed="1.080482"/>
+<status status="PASS" start="2025-06-02T17:04:49.701233" elapsed="1.091394"/>
 </kw>
 <kw name="And user logs out" owner="App">
 <kw name="Given navbar should be visible" owner="Navbar">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:49.758158" level="INFO">Element 'class=header-links' is displayed.</msg>
+<msg time="2025-06-02T17:04:50.812615" level="INFO">Element 'class=header-links' is displayed.</msg>
 <arg>${NAVBAR_LOCATOR}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.743340" elapsed="0.014993"/>
+<status status="PASS" start="2025-06-02T17:04:50.793897" elapsed="0.018995"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:49.743162" elapsed="0.015474"/>
+<status status="PASS" start="2025-06-02T17:04:50.793533" elapsed="0.019835"/>
 </kw>
 <kw name="When user clicks logout" owner="Navbar">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:49.759342" level="INFO">Clicking element 'class=ico-logout'.</msg>
+<msg time="2025-06-02T17:04:50.814506" level="INFO">Clicking element 'class=ico-logout'.</msg>
 <arg>${LOGOUT_NAVBAR_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:49.759109" elapsed="0.680779"/>
+<status status="PASS" start="2025-06-02T17:04:50.814202" elapsed="0.790499"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:49.758839" elapsed="0.681207"/>
+<status status="PASS" start="2025-06-02T17:04:50.813715" elapsed="0.791134"/>
 </kw>
 <tag>logout</tag>
-<status status="PASS" start="2025-06-02T16:35:49.742941" elapsed="0.697173"/>
+<status status="PASS" start="2025-06-02T17:04:50.792999" elapsed="0.811916"/>
 </kw>
 <tag>login</tag>
 <tag>logout</tag>
 <tag>register</tag>
-<status status="PASS" start="2025-06-02T16:35:45.952408" elapsed="4.487833"/>
+<status status="PASS" start="2025-06-02T17:04:47.097010" elapsed="4.508021"/>
 </test>
-<test id="s1-t2" name="User logs in adds from cart" line="20">
+<test id="s1-t2" name="User logs in adds from cart then removes" line="20">
 <kw name="Given user logs in with valid data" owner="App">
 <kw name="Given user is on the login page" owner="App">
 <kw name="Given navbar should be visible" owner="Navbar">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:50.464388" level="INFO">Element 'class=header-links' is displayed.</msg>
+<msg time="2025-06-02T17:04:51.632053" level="INFO">Element 'class=header-links' is displayed.</msg>
 <arg>${NAVBAR_LOCATOR}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-02T16:35:50.442093" elapsed="0.022600"/>
+<status status="PASS" start="2025-06-02T17:04:51.606809" elapsed="0.025421"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:50.441505" elapsed="0.023428"/>
+<status status="PASS" start="2025-06-02T17:04:51.606222" elapsed="0.026116"/>
 </kw>
 <kw name="When user clicks login" owner="Navbar">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:50.465794" level="INFO">Clicking element 'class=ico-login'.</msg>
+<msg time="2025-06-02T17:04:51.633000" level="INFO">Clicking element 'class=ico-login'.</msg>
 <arg>${LOGIN_NAVBAR_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:50.465480" elapsed="0.329935"/>
+<status status="PASS" start="2025-06-02T17:04:51.632806" elapsed="0.305560"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:50.465144" elapsed="0.330566"/>
+<status status="PASS" start="2025-06-02T17:04:51.632517" elapsed="0.306043"/>
 </kw>
 <kw name="Then verify page title" owner="Common">
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${PAGE_TITLE_LOCATOR}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-02T16:35:50.796223" elapsed="0.014322"/>
+<status status="PASS" start="2025-06-02T17:04:51.939036" elapsed="0.005164"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:50.824219" level="INFO">${PAGE_TITLE_VALUE} = Welcome, Please Sign In!</msg>
+<msg time="2025-06-02T17:04:51.960715" level="INFO">${PAGE_TITLE_VALUE} = Welcome, Please Sign In!</msg>
 <var>${PAGE_TITLE_VALUE}</var>
 <arg>${PAGE_TITLE_LOCATOR}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:50.810782" elapsed="0.013564"/>
+<status status="PASS" start="2025-06-02T17:04:51.944453" elapsed="0.016418"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${PAGE_TITLE_VALUE}</arg>
 <arg>${page_title}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-06-02T16:35:50.824517" elapsed="0.000211"/>
+<status status="PASS" start="2025-06-02T17:04:51.961137" elapsed="0.000382"/>
 </kw>
 <arg>Sign In</arg>
-<status status="PASS" start="2025-06-02T16:35:50.795939" elapsed="0.028879"/>
+<status status="PASS" start="2025-06-02T17:04:51.938756" elapsed="0.022897"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:50.441313" elapsed="0.383570"/>
+<status status="PASS" start="2025-06-02T17:04:51.606042" elapsed="0.355701"/>
 </kw>
 <kw name="When user fills the login form" owner="Login">
 <kw name="Fill Log In Form" owner="Login">
 <kw name="Fill Email" owner="Login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:50.825842" level="INFO">Typing text 'john.doe1235@e3xample.com' into text field 'id=Email'.</msg>
+<msg time="2025-06-02T17:04:51.963286" level="INFO">Typing text 'john.doe99@e3xample.com' into text field 'id=Email'.</msg>
 <arg>${EMAIL_INPUT_LOCATOR}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:50.825641" elapsed="0.061475"/>
+<status status="PASS" start="2025-06-02T17:04:51.962883" elapsed="0.066285"/>
 </kw>
 <arg>${email}</arg>
-<status status="PASS" start="2025-06-02T16:35:50.825443" elapsed="0.061839"/>
+<status status="PASS" start="2025-06-02T17:04:51.962514" elapsed="0.066897"/>
 </kw>
 <kw name="Fill Password" owner="Login">
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:50.888014" level="INFO">Typing password into text field 'id=Password'.</msg>
-<msg time="2025-06-02T16:35:50.924718" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-06-02T17:04:52.030757" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-06-02T17:04:52.058402" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD_INPUT_LOCATOR}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:50.887776" elapsed="0.083986"/>
+<status status="PASS" start="2025-06-02T17:04:52.030286" elapsed="0.079723"/>
 </kw>
 <arg>${password}</arg>
-<status status="PASS" start="2025-06-02T16:35:50.887463" elapsed="0.084609"/>
+<status status="PASS" start="2025-06-02T17:04:52.029669" elapsed="0.080580"/>
 </kw>
 <arg>${email}</arg>
 <arg>Password123</arg>
-<status status="PASS" start="2025-06-02T16:35:50.825224" elapsed="0.147004"/>
+<status status="PASS" start="2025-06-02T17:04:51.962177" elapsed="0.148152"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:50.825016" elapsed="0.147360"/>
+<status status="PASS" start="2025-06-02T17:04:51.961920" elapsed="0.148472"/>
 </kw>
 <kw name="And user submits the login form" owner="Login">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:50.973234" level="INFO">Clicking element 'xpath=/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input'.</msg>
+<msg time="2025-06-02T17:04:52.111138" level="INFO">Clicking element 'xpath=/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input'.</msg>
 <arg>${LOGIN_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:50.973018" elapsed="0.485165"/>
+<status status="PASS" start="2025-06-02T17:04:52.110935" elapsed="0.049082"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:50.972698" elapsed="0.485687"/>
+<status status="PASS" start="2025-06-02T17:04:52.110595" elapsed="0.049578"/>
 </kw>
 <kw name="Then user account should be visible in navbar" owner="Navbar">
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${ACCOUNT_NAVBAR_LOCATOR}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-02T16:35:51.458923" elapsed="0.052507"/>
+<status status="PASS" start="2025-06-02T17:04:52.160640" elapsed="0.738152"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:51.532044" level="INFO">${ACCOUNT_NAVBAR_VALUE} = john.doe1235@e3xample.com</msg>
+<msg time="2025-06-02T17:04:52.912343" level="INFO">${ACCOUNT_NAVBAR_VALUE} = john.doe99@e3xample.com</msg>
 <var>${ACCOUNT_NAVBAR_VALUE}</var>
 <arg>${ACCOUNT_NAVBAR_LOCATOR}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:51.511655" elapsed="0.020591"/>
+<status status="PASS" start="2025-06-02T17:04:52.899179" elapsed="0.013280"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${ACCOUNT_NAVBAR_VALUE}</arg>
 <arg>${email}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-06-02T16:35:51.532670" elapsed="0.000587"/>
+<status status="PASS" start="2025-06-02T17:04:52.912624" elapsed="0.000245"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:51.458616" elapsed="0.074796"/>
+<status status="PASS" start="2025-06-02T17:04:52.160367" elapsed="0.752586"/>
 </kw>
 <tag>login</tag>
-<status status="PASS" start="2025-06-02T16:35:50.441041" elapsed="1.092505"/>
+<status status="PASS" start="2025-06-02T17:04:51.605797" elapsed="1.307219"/>
 </kw>
 <kw name="And logged user adds item &quot;Book&quot; to cart" owner="App">
 <kw name="Given section bar should be visible" owner="Navbar">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:51.554814" level="INFO">Element 'class=header-menu' is displayed.</msg>
+<msg time="2025-06-02T17:04:52.927706" level="INFO">Element 'class=header-menu' is displayed.</msg>
 <arg>${SECTION_BAR_LOCATOR}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-02T16:35:51.534916" elapsed="0.020070"/>
+<status status="PASS" start="2025-06-02T17:04:52.913678" elapsed="0.014201"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:51.534662" elapsed="0.020422"/>
+<status status="PASS" start="2025-06-02T17:04:52.913452" elapsed="0.014530"/>
 </kw>
 <kw name="When user selects &quot;Books&quot; section" owner="Product">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:51.555691" level="INFO">Clicking element 'css=ul.top-menu &gt; li:first-child'.</msg>
+<msg time="2025-06-02T17:04:52.928616" level="INFO">Clicking element 'css=ul.top-menu &gt; li:first-child'.</msg>
 <arg>${BOOK_SECTION_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:51.555500" elapsed="0.502630"/>
+<status status="PASS" start="2025-06-02T17:04:52.928424" elapsed="0.477864"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:51.555250" elapsed="0.503045"/>
+<status status="PASS" start="2025-06-02T17:04:52.928159" elapsed="0.478282"/>
 </kw>
 <kw name="And verify page title" owner="Common">
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${PAGE_TITLE_LOCATOR}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-02T16:35:52.058839" elapsed="0.010191"/>
+<status status="PASS" start="2025-06-02T17:04:53.406891" elapsed="0.007884"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:52.083928" level="INFO">${PAGE_TITLE_VALUE} = Books</msg>
+<msg time="2025-06-02T17:04:53.425634" level="INFO">${PAGE_TITLE_VALUE} = Books</msg>
 <var>${PAGE_TITLE_VALUE}</var>
 <arg>${PAGE_TITLE_LOCATOR}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:52.069246" elapsed="0.014805"/>
+<status status="PASS" start="2025-06-02T17:04:53.414997" elapsed="0.010758"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${PAGE_TITLE_VALUE}</arg>
 <arg>${page_title}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-06-02T16:35:52.084352" elapsed="0.000233"/>
+<status status="PASS" start="2025-06-02T17:04:53.426052" elapsed="0.000246"/>
 </kw>
 <arg>Books</arg>
-<status status="PASS" start="2025-06-02T16:35:52.058489" elapsed="0.026181"/>
+<status status="PASS" start="2025-06-02T17:04:53.406620" elapsed="0.019765"/>
 </kw>
 <kw name="Then product list should be visible" owner="Product">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:52.097132" level="INFO">Element 'class=product-grid' is displayed.</msg>
+<msg time="2025-06-02T17:04:53.439357" level="INFO">Element 'class=product-grid' is displayed.</msg>
 <arg>${PRODUCT_LIST_LOCATOR}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-02T16:35:52.085024" elapsed="0.012288"/>
+<status status="PASS" start="2025-06-02T17:04:53.426751" elapsed="0.012779"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:52.084815" elapsed="0.012601"/>
+<status status="PASS" start="2025-06-02T17:04:53.426536" elapsed="0.013100"/>
 </kw>
 <kw name="When user selects the first product from the list" owner="Product">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:52.098029" level="INFO">Clicking element 'css=div.product-grid &gt; div:nth-child(1) a'.</msg>
+<msg time="2025-06-02T17:04:53.440265" level="INFO">Clicking element 'css=div.product-grid &gt; div:nth-child(1) a'.</msg>
 <arg>${FIRST_PRODUCT_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:52.097844" elapsed="1.101459"/>
+<status status="PASS" start="2025-06-02T17:04:53.440076" elapsed="0.548655"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:52.097592" elapsed="1.101876"/>
+<status status="PASS" start="2025-06-02T17:04:53.439815" elapsed="0.549191"/>
 </kw>
 <kw name="And check if we are in a product page" owner="Product">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:53.218546" level="INFO">Element 'class=product-essential' is displayed.</msg>
+<msg time="2025-06-02T17:04:54.004920" level="INFO">Element 'class=product-essential' is displayed.</msg>
 <arg>${PRODUCT_OVERVIEW_LOCATOR}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-02T16:35:53.199926" elapsed="0.018789"/>
+<status status="PASS" start="2025-06-02T17:04:53.989800" elapsed="0.015332"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:53.199655" elapsed="0.019165"/>
+<status status="PASS" start="2025-06-02T17:04:53.989332" elapsed="0.015909"/>
 </kw>
 <kw name="Then user adds the product to the cart" owner="Product">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:53.219602" level="INFO">Clicking element 'css=[id^="add-to-cart-button"]'.</msg>
+<msg time="2025-06-02T17:04:54.005867" level="INFO">Clicking element 'css=[id^="add-to-cart-button"]'.</msg>
 <arg>${ADD_TO_CART_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:53.219285" elapsed="0.047838"/>
+<status status="PASS" start="2025-06-02T17:04:54.005677" elapsed="0.050557"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:53.218996" elapsed="0.048284"/>
+<status status="PASS" start="2025-06-02T17:04:54.005420" elapsed="0.050971"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:51.534161" elapsed="1.733189"/>
+<status status="PASS" start="2025-06-02T17:04:52.913186" elapsed="1.143272"/>
 </kw>
 <kw name="Then cart should contain &quot;Book&quot;" owner="App">
 <kw name="Given navbar should be visible" owner="Navbar">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:53.280099" level="INFO">Element 'class=header-links' is displayed.</msg>
+<msg time="2025-06-02T17:04:54.066933" level="INFO">Element 'class=header-links' is displayed.</msg>
 <arg>${NAVBAR_LOCATOR}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-02T16:35:53.268007" elapsed="0.012258"/>
+<status status="PASS" start="2025-06-02T17:04:54.057111" elapsed="0.010017"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:53.267811" elapsed="0.012562"/>
+<status status="PASS" start="2025-06-02T17:04:54.056916" elapsed="0.010325"/>
 </kw>
 <kw name="When users clicks shopping cart" owner="Navbar">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:53.281003" level="INFO">Clicking element 'class=ico-cart'.</msg>
+<msg time="2025-06-02T17:04:54.067884" level="INFO">Clicking element 'class=ico-cart'.</msg>
 <arg>${SHOPPING_CART_NAVBAR_BUTTON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:53.280813" elapsed="1.071026"/>
+<status status="PASS" start="2025-06-02T17:04:54.067694" elapsed="0.976093"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:53.280550" elapsed="1.071442"/>
+<status status="PASS" start="2025-06-02T17:04:54.067428" elapsed="0.976718"/>
 </kw>
 <kw name="And verify page title" owner="Common">
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${PAGE_TITLE_LOCATOR}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.352524" elapsed="0.013335"/>
+<status status="PASS" start="2025-06-02T17:04:55.045124" elapsed="0.016575"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:54.379350" level="INFO">${PAGE_TITLE_VALUE} = Shopping cart</msg>
+<msg time="2025-06-02T17:04:55.076941" level="INFO">${PAGE_TITLE_VALUE} = Shopping cart</msg>
 <var>${PAGE_TITLE_VALUE}</var>
 <arg>${PAGE_TITLE_LOCATOR}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.366082" elapsed="0.013462"/>
+<status status="PASS" start="2025-06-02T17:04:55.061959" elapsed="0.015108"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${PAGE_TITLE_VALUE}</arg>
 <arg>${page_title}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.379835" elapsed="0.000251"/>
+<status status="PASS" start="2025-06-02T17:04:55.077241" elapsed="0.000215"/>
 </kw>
 <arg>Shopping cart</arg>
-<status status="PASS" start="2025-06-02T16:35:54.352203" elapsed="0.027971"/>
+<status status="PASS" start="2025-06-02T17:04:55.044582" elapsed="0.032957"/>
 </kw>
 <kw name="Then Verify Cart Row Count" owner="ShoppingCart">
 <kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:54.389526" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="f383fc196d042353779a5ff46c09b995", element="f.DDB003165555E30CEA29BC8B29DDC89A.d.90B0BAF0F4C8C1C5668873D90BFE08A5.e.523")&gt;]</msg>
+<msg time="2025-06-02T17:04:55.087794" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="0a7bb59f88e27ac3ebcbe97ee227f031", element="f.6A298CD4528F09FBA795581F0223F44A.d.092E9F6BD8F2A7EB6B164E79F2DA3CEE.e.523")&gt;]</msg>
 <var>${elements}</var>
 <arg>${TABLE_ROWS_LOCATOR}</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.380579" elapsed="0.009147"/>
+<status status="PASS" start="2025-06-02T17:04:55.077932" elapsed="0.009982"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-06-02T16:35:54.390209" level="INFO">Length is 1.</msg>
-<msg time="2025-06-02T16:35:54.390329" level="INFO">${row_count} = 1</msg>
+<msg time="2025-06-02T17:04:55.088672" level="INFO">Length is 1.</msg>
+<msg time="2025-06-02T17:04:55.088793" level="INFO">${row_count} = 1</msg>
 <var>${row_count}</var>
 <arg>${elements}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.389947" elapsed="0.000429"/>
+<status status="PASS" start="2025-06-02T17:04:55.088332" elapsed="0.000507"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${row_count} &gt; 0</arg>
 <arg>Cart is empty !</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.390895" elapsed="0.000227"/>
+<status status="PASS" start="2025-06-02T17:04:55.089267" elapsed="0.000214"/>
 </kw>
 <arg>'${expected_state}' == 'empty'</arg>
 <arg>Should Be Equal As Integers</arg>
@@ -605,60 +605,60 @@
 <arg>${row_count} &gt; 0</arg>
 <arg>Cart is empty !</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.390585" elapsed="0.000641"/>
+<status status="PASS" start="2025-06-02T17:04:55.088969" elapsed="0.000608"/>
 </kw>
 <arg>not empty</arg>
-<status status="PASS" start="2025-06-02T16:35:54.380332" elapsed="0.010984"/>
+<status status="PASS" start="2025-06-02T17:04:55.077689" elapsed="0.011980"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:53.267539" elapsed="1.123856"/>
+<status status="PASS" start="2025-06-02T17:04:54.056644" elapsed="1.033093"/>
 </kw>
 <kw name="And user removes item &quot;Book&quot; from cart" owner="ShoppingCart">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:54.409242" level="INFO">Element 'css=table.cart &gt; tbody &gt; tr:first-child input[type="checkbox"]' is displayed.</msg>
+<msg time="2025-06-02T17:04:55.105900" level="INFO">Element 'css=table.cart &gt; tbody &gt; tr:first-child input[type="checkbox"]' is displayed.</msg>
 <arg>${CHECKBOX_REMOVE_LOCATOR}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.392020" elapsed="0.017403"/>
+<status status="PASS" start="2025-06-02T17:04:55.090114" elapsed="0.015966"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:54.409845" level="INFO">Clicking element 'css=table.cart &gt; tbody &gt; tr:first-child input[type="checkbox"]'.</msg>
+<msg time="2025-06-02T17:04:55.106494" level="INFO">Clicking element 'css=table.cart &gt; tbody &gt; tr:first-child input[type="checkbox"]'.</msg>
 <arg>${CHECKBOX_REMOVE_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.409599" elapsed="0.046821"/>
+<status status="PASS" start="2025-06-02T17:04:55.106259" elapsed="0.041522"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:54.456985" level="INFO">Clicking element 'name=updatecart'.</msg>
+<msg time="2025-06-02T17:04:55.148335" level="INFO">Clicking element 'name=updatecart'.</msg>
 <arg>${UPDATE_CART_BUTOON_LOCATOR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.456690" elapsed="0.328427"/>
+<status status="PASS" start="2025-06-02T17:04:55.148020" elapsed="0.052045"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:54.391559" elapsed="0.393837"/>
+<status status="PASS" start="2025-06-02T17:04:55.089889" elapsed="0.110352"/>
 </kw>
 <kw name="Then Verify Cart Row Count" owner="ShoppingCart">
 <kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2025-06-02T16:35:54.829238" level="INFO">${elements} = []</msg>
+<msg time="2025-06-02T17:04:55.497898" level="INFO">${elements} = []</msg>
 <var>${elements}</var>
 <arg>${TABLE_ROWS_LOCATOR}</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.786399" elapsed="0.042962"/>
+<status status="PASS" start="2025-06-02T17:04:55.200750" elapsed="0.297274"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-06-02T16:35:54.829940" level="INFO">Length is 0.</msg>
-<msg time="2025-06-02T16:35:54.830046" level="INFO">${row_count} = 0</msg>
+<msg time="2025-06-02T17:04:55.498648" level="INFO">Length is 0.</msg>
+<msg time="2025-06-02T17:04:55.498784" level="INFO">${row_count} = 0</msg>
 <var>${row_count}</var>
 <arg>${elements}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.829710" elapsed="0.000382"/>
+<status status="PASS" start="2025-06-02T17:04:55.498381" elapsed="0.000450"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-06-02T16:35:54.830649" level="INFO">Argument types are:
+<msg time="2025-06-02T17:04:55.499420" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${row_count}</arg>
 <arg>0</arg>
 <arg>Cart is not empty !</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.830474" elapsed="0.000255"/>
+<status status="PASS" start="2025-06-02T17:04:55.499246" elapsed="0.000268"/>
 </kw>
 <arg>'${expected_state}' == 'empty'</arg>
 <arg>Should Be Equal As Integers</arg>
@@ -670,29 +670,29 @@
 <arg>${row_count} &gt; 0</arg>
 <arg>Cart is empty !</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.830222" elapsed="0.000578"/>
+<status status="PASS" start="2025-06-02T17:04:55.498980" elapsed="0.000606"/>
 </kw>
 <arg>empty</arg>
-<status status="PASS" start="2025-06-02T16:35:54.785780" elapsed="0.045120"/>
+<status status="PASS" start="2025-06-02T17:04:55.200448" elapsed="0.299229"/>
 </kw>
 <tag>smoke</tag>
-<status status="PASS" start="2025-06-02T16:35:50.440582" elapsed="4.390434"/>
+<status status="PASS" start="2025-06-02T17:04:51.605319" elapsed="3.894481"/>
 </test>
 <kw name="End Web Test" owner="Common" type="TEARDOWN">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-02T16:35:55.832540" level="INFO">Slept 1 second.</msg>
+<msg time="2025-06-02T17:04:56.501404" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-02T16:35:54.831806" elapsed="1.001291"/>
+<status status="PASS" start="2025-06-02T17:04:55.500775" elapsed="1.001081"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-06-02T16:35:55.833560" elapsed="2.302732"/>
+<status status="PASS" start="2025-06-02T17:04:56.502334" elapsed="2.306553"/>
 </kw>
-<status status="PASS" start="2025-06-02T16:35:54.831585" elapsed="3.305061"/>
+<status status="PASS" start="2025-06-02T17:04:55.500550" elapsed="3.308749"/>
 </kw>
 <doc>Cest une description du test page en general</doc>
-<status status="PASS" start="2025-06-02T16:35:42.200973" elapsed="15.935798"/>
+<status status="PASS" start="2025-06-02T17:04:42.865069" elapsed="15.944401"/>
 </suite>
 <statistics>
 <total>

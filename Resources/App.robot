@@ -30,6 +30,7 @@ user is on the login page
     Given navbar should be visible
     When user clicks login
     Then verify page title  Sign In
+
 user logs in with valid data
     [Tags]    login
     Given user is on the login page
