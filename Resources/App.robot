@@ -21,7 +21,7 @@ user registers with valid data
     Then a success message appears
 
 ## Logout After Register
-user logout after register
+user logs out
     [Tags]    logout
     Given navbar should be visible
     When user clicks logout
@@ -47,7 +47,3 @@ logged user adds item "Books" to cart
     When user selects the first product from the list
     And check if we are in a product page
     Then user adds the product to the cart
-
-
-
-
