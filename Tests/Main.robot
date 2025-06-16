@@ -8,7 +8,7 @@ Suite Teardown   End Web Test
 *** Variables ***
 ${Browser}      chrome
 ${URL}      https://demowebshop.tricentis.com/
-${email}  john.doe9480@e3xample.com
+${email}  john.doe2002@e3xample.com
 *** Test Cases ***
 User registers logs out then logs in
     [Tags]    register      logout      login
