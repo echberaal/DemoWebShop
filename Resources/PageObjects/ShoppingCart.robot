@@ -22,11 +22,3 @@ user removes item "Book" from cart
 
 
 
-
-
-
-
-
-
-
-

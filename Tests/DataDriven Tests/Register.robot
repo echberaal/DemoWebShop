@@ -15,10 +15,12 @@ User registers
     [Documentation]     Register
     [Tags]      register  user
     Maximize Browser Window
+
 *** Keywords ***
 user registers with data
     [Arguments]     ${gender}    ${firstName}    ${lastName}    ${email}    ${password}    ${confirmPassword}
     Given Fill Registration Form  ${gender}    ${firstName}    ${lastName}    ${email}    ${password}    ${confirmPassword}
     When user submits the registration form
     And generated error messages
+
 
